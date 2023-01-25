@@ -7,8 +7,8 @@ public class T33_borrowGymClothes {
 		int n = 5;
 		int[] nl = {2,4};
 		int[] ml = {1,3,5};
-		
-		
+
+
 		String s = "1D2S#10S";
 		int res = solution(n, nl, ml);
 		System.out.println(res);
@@ -19,24 +19,24 @@ public class T33_borrowGymClothes {
 		Arrays.sort(nl);
 		Arrays.sort(ml);
 		int idx=0;
-		
-		for(int i=0;i<ml.length;i++) {
+
+		for (int element : ml) {
 			for(int j=idx;j<nl.length;j++) {
-				if(ml[i]==nl[j]) {
+				if(element==nl[j]) {
 					idx++;
 					answer+=1;
 					break;
 				}
-				if(ml[i]==nl[j]-1 ||ml[i]==nl[j]+1) {
+				if(element==nl[j]-1 ||element==nl[j]+1) {
 					idx++;
 					answer++;
 					break;
 				}
 			}
 		}
-		
+
 		return answer;
-		
+
 	}
 
 }

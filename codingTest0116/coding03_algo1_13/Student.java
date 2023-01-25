@@ -16,16 +16,16 @@ public class Student {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	
-	
+
+
 	public Student() {
-		
+
 	}
 	public Student(String name, String no) {
 		super();
 		this.name = name;
 		this.no = no;
 	}
-	
-	
+
+
 }

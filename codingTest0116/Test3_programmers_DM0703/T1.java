@@ -8,19 +8,19 @@ public class T1 {
 		int res = solution(n);
 		System.out.println(res);
 
-	
+
 	}
 
 	public static int solution(int[] n) {
 
 		int answer = 0;
-		
+
 		for(int i=n.length-1;i>0;i--) {
 			if(n[i-1]>n[i]) {
 				int gap = n[i-1]-n[i];
 				n[i-1]-=gap;
 				answer+=gap;
-				
+
 			}
 		}
 

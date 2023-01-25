@@ -10,9 +10,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int m = (int) Math.sqrt(n)+1;
-		
+
 		int i = 1;
-	
+
 		if (n % Math.sqrt(n) == 0) {
 			answer += n / Math.sqrt(n);
 			m = (int) Math.sqrt(n);
@@ -31,5 +31,5 @@ public class Main {
 
 	}
 
-	
+
 }

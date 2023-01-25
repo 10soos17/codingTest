@@ -2,11 +2,7 @@ package codingTest_Fasoo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 ////char 사용시 유의
 //(char)(‘0’+val);
@@ -65,9 +61,9 @@ public class Test1 {
 		HashMap<String, Integer> map = new HashMap<>();
 
 		/*
-		 * 
-		 * 
-		 * 
+		 *
+		 *
+		 *
 		 */
 		int[] arr = {1,1,0,1,1,0,0,0,1};// { 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1 };// {1,1,0,1,1,0,0,0,1};
 		int[] arr2 = {};
@@ -83,7 +79,7 @@ public class Test1 {
 		int[] answer = new int[2];
 		int[][] matrix = new int[r][c];
 		int cnt = 0;
-		
+
 		for (int i = 0; i < r; i++) {
 			for (int j = 0; j < c; j++) {
 				matrix[i][j] = bombmap[cnt];
@@ -98,10 +94,10 @@ public class Test1 {
 			}
 			System.out.println();
 		}
-		
-		
+
+
 		int n = 0;
-		
+
 
 		for (int i = 0; i < r - 1; i++) {
 			for (int j = 0; j < c; j++) {
@@ -139,12 +135,12 @@ public class Test1 {
 			}
 
 		}
-		
+
 		System.out.println("next");
-		
+
 		for (int i = 0; i < c-1; i++) {
 			for (int j = 0; j < r; j++) {
-				
+
 				if(matrix[j][i] == matrix[j][i+1]) {
 					System.out.println("ss:" + matrix[i][j]);
 					n+=1;
@@ -152,9 +148,9 @@ public class Test1 {
 					n=0;
 					break;
 				}
-				
+
 			}
-			
+
 			if (n == r) {
 				if (i == c - 2) {
 					for (int k = 0; k < r; k++) {
@@ -177,29 +173,29 @@ public class Test1 {
 				}
 				System.out.println();
 			}
-			
+
 		}
-	
-		
-		
+
+
+
 
 		for (int i = 0; i < r; i++) {
 			for (int j = 0; j < c; j++) {
 				if(matrix[i][j]==1) {
-					
+
 					answer[0]++;
 				}else if(matrix[i][j]==0) {
-					
+
 					answer[1]++;
 				}
 			}
-			
+
 		}
 
 		System.out.println(Arrays.toString(answer));
-		
-		
-		
+
+
+
 
 		return answer;
 	}

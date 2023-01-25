@@ -18,33 +18,33 @@ public class PrintStar {
 //			}
 //			System.out.println();
 //		}
-		
+
 
 		//*****
 		//****
 		//***
 		//**
 		//*
-		
-	
+
+
 //		for(int i=0;i<n;i++) {
 //			for(int j=0;j<n-i;j++) {
 //				System.out.print("*");
 //			}
 //			System.out.println();
 //		}
-		
+
 	for(int i=0;i<n;i++) {
 		for(int j=0;j<n-i;j++) {
-			
+
 			System.out.print("*");
 		}
 		System.out.println();
 	}
-	
-	
-	
-	
+
+
+
+
 		//*****
 		// ****
 		//  ***
@@ -55,13 +55,13 @@ public class PrintStar {
 //				if(i > j) {
 //					System.out.print(" ");
 //				}else {
-//					System.out.print("*");	
+//					System.out.print("*");
 //				}
-//				
+//
 //			}
 //			System.out.println();
 //		}
-	
+
 	for(int i=0;i<n;i++) {
 		for(int j=0;j<n;j++) {
 			if(j>=i) {
@@ -72,41 +72,41 @@ public class PrintStar {
 		}
 		System.out.println();
 	}
-		
-		
+
+
 		//    *
 		//   **
 		//  ***
 		// ****
 		//*****
-		
+
 //		//1
 //		for(int i=0; i<n; i++) {
 //			for(int j=n-1; j>=0; j--) {
 //				if(i < j) {
 //					System.out.print(" ");
 //				}else {
-//					System.out.print("*");	
+//					System.out.print("*");
 //				}
-//				
+//
 //			}
 //			System.out.println();
 //		}
-//		
+//
 //		//2
 //		for(int i=0; i<n; i++) {
 //			for(int j=0; j<n; j++) {
 //				if(i < n-(j+1)) {
 //					System.out.print(" ");
 //				}else {
-//					System.out.print("*");	
+//					System.out.print("*");
 //				}
-//				
+//
 //			}
 //			System.out.println();
 //		}
 
-		
+
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<n;j++) {
 				if(j >=n-i-1) {
@@ -118,7 +118,7 @@ public class PrintStar {
 			}
 			System.out.println();
 		}
-		
+
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<n;j++) {
 				if(n-(j+1) <= i) {
@@ -129,7 +129,7 @@ public class PrintStar {
 			}
 			System.out.println();
 		}
-		
+
 		for(int i=0;i<n;i++) {
 			for(int j=n-1;j>=0;j--) {
 				if(j<=i) {
@@ -139,9 +139,9 @@ public class PrintStar {
 				}
 			}
 			System.out.println();
-			
+
 		}
-		
+
 
 	}
 

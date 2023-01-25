@@ -1,14 +1,11 @@
 package coding_BaekJoon;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Queue;
 
 //https://www.youtube.com/watch?v=3_eVkTkBbJE&list=PLi-xJrVzQaxUVf9DWyUdEzhJB0dGvvgrk&index=4
 //https://www.acmicpc.net/problem/2667
-//구현방법: 1.stack 2.재귀함수 
+//구현방법: 1.stack 2.재귀함수
 public class DFS {
 
 	static int n;
@@ -25,7 +22,7 @@ public class DFS {
 	}
 
 	public static void dfs(int y, int x, int[][] list, boolean[][] check) {
-		
+
 		each+=1;
 		int nx;
 		int ny;
@@ -36,7 +33,7 @@ public class DFS {
 			nx = x + dx[i];
 			ny = y + dy[i];
 			if (0 <= ny && ny < n && 0 <= nx && nx < n) {
-				if (list[ny][nx] == 1 && check[ny][nx] == false) {
+				if (list[ny][nx] == 1 && !check[ny][nx]) {
 
 					check[ny][nx] = true;
 					dfs(ny, nx, list, check);
@@ -53,7 +50,7 @@ public class DFS {
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				if (list[i][j] == 1 && check[i][j] == false) {
+				if (list[i][j] == 1 && !check[i][j]) {
 					// 방문 체크 표시
 					// DFS 그림 크기를 구하기
 					// 결과값 저장
@@ -68,13 +65,13 @@ public class DFS {
 			}
 			System.out.println();
 		}
-		
-		
+
+
 		Collections.sort(result);
-		
-		System.out.print(result.size());//결과 그림의 개수 
+
+		System.out.print(result.size());//결과 그림의 개수
 		for (int i : result) {
-			System.out.print(i);//각 그림에 포함되는 1의 수 
+			System.out.print(i);//각 그림에 포함되는 1의 수
 		}
 
 	}

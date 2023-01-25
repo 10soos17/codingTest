@@ -1,13 +1,7 @@
 package coding_naver;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 ////char 사용시 유의
 //(char)(‘0’+val);
@@ -58,23 +52,23 @@ import java.util.regex.Pattern;
 //ArrayList<Integer> list = new ArrayList<>();
 //HashMap<String, Integer> map = new HashMap<>();
 public class Test2 {
-	
-	 //표준입력을 수행할 Scanner를 선언한다 
+
+	 //표준입력을 수행할 Scanner를 선언한다
     public static Scanner scanner = new Scanner(System.in);
 
     public static void testCase(int caseNum)
-    {   //하나의 테스트케이스를 처리하는 함수 
+    {   //하나의 테스트케이스를 처리하는 함수
         //각 테스트케이스에 대하여 데이터를 입력받고 정답을 출력하세요
-    	
+
     	int n = 10;//scanner.nextInt();
 		int m = 3;//scanner.nextInt();
-		ArrayList<Integer> arr = new ArrayList<Integer>();
+		ArrayList<Integer> arr = new ArrayList<>();
 //		int[] arr = new int[n];
 //		for(int i = 0 ; i < n ; i ++)
 //		{
 //			arr[i] = scanner.nextInt();
 //		}
-		
+
 		arr.add(123123123);
 		arr.add(234234234);
 		arr.add(234234234);
@@ -89,14 +83,14 @@ public class Test2 {
 		solution(m,arr);
 
     }
-    
-    
+
+
 	public static void solution(int m, ArrayList<Integer> arr) {
-		
+
 		int answer=0;
 		int cnt=0;
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		
+		ArrayList<Integer> list = new ArrayList<>();
+
 		for(int i=0;i<arr.size();i++) {
 			if(cnt == m) {
 				answer=i;
@@ -107,26 +101,26 @@ public class Test2 {
 				break;
 			}
 			else if(list.indexOf(arr.get(i)) ==-1) {
-				
+
 				list.add(arr.get(i));
 				cnt+=1;
 			}
-			
+
 		}
 		System.out.println(answer);
-		
-		
+
+
 	}
 
     public static void main(String[] args)
-    {   //프로그램의 시작부 
+    {   //프로그램의 시작부
         int tn = 2; //테스트케이스의 수를 입력받는다
         for(int caseNum = 1 ; caseNum <= tn ; caseNum++)
         {   //테스트케이스의 수 만큼 반복 수행한다
             testCase(caseNum);
         }
     }
-	
+
 
 
 

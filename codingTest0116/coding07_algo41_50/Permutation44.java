@@ -1,7 +1,5 @@
 package coding07_algo41_50;
 
-import java.util.Scanner;
-
 //[완전탐색 (Exhaustive search, Brute force)]
 //모든 경우의 수를 시도해보는 방법
 //상대적으로 구현이 간단, 해가 존재한다면 항상 찾게 됨
@@ -11,12 +9,12 @@ import java.util.Scanner;
 //ex.
 //1.순차탐색(sequential search) : 검색(O(n))
 
-//경우의 수 
-//순열(permutation) : 선택 순서가 결과에 영향을 미치는 경우 
+//경우의 수
+//순열(permutation) : 선택 순서가 결과에 영향을 미치는 경우
 //조합(combination) : 선택 순서가 결과에 영향을 주지 않는 경우
 
 
-//순열 - 가장 큰 두 자리 수 구하기 
+//순열 - 가장 큰 두 자리 수 구하기
 public class Permutation44 {
 	static int n = 4;
 	static int[] arr = {1,2,3,4};
@@ -25,10 +23,10 @@ public class Permutation44 {
 
 
 		solve(0,0,0);
-		
+
 	}
 	public static int solve(int cnt, int used, int val) {
-		
+
 		if(cnt == 2) {
 			return val;
 		}
@@ -39,8 +37,8 @@ public class Permutation44 {
 			}
 			ret = Math.max(ret, solve(cnt+1, used | 1 << i, val * 10 + arr[i]));
 		}
-		
-		
+
+
 		return ret;
 	}
 }

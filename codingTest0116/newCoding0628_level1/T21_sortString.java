@@ -18,10 +18,10 @@ class T21_sortString {
 
 	public static String solution(String n) {
 		String answer = "";
-		
+
 		char[] list = n.toCharArray();
 		Arrays.sort(list);
-		
+
 		answer = new StringBuilder(new String(list)).reverse().toString();
 
 

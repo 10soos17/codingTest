@@ -25,16 +25,16 @@ public class Parsing {
 			"nexcore-framework-build-antsupport-7.2.0.jar",
 			"idcard-decrypt-1.0-SNAPSHOT.jar",
 			"idcard-encrypt-1.0-SNAPSHOT.jar"};
-		
-		
-		//+엑셀로 불러와서 읽기 
-		
+
+
+		//+엑셀로 불러와서 읽기
+
 		String[] words = {"SNAPSHOT"};	//db 객체
 		ArrayList<String> appendix = addAppendix(words);
-		
+
 		String[] answer = parsing(data, appendix);
-		
-		//+엑셀로 저장하기 
+
+		//+엑셀로 저장하기
 
 	}
 	public static ArrayList<String> addAppendix(String[] words){
@@ -42,31 +42,31 @@ public class Parsing {
 		for(String s : words) {
 			appendix.add(s);
 		}
-		
+
 		return appendix;
 	}
 	public static String[] parsing(String[] data, ArrayList<String> appendix) {
-		
+
 		String[] version = new String[data.length];
-		
+
 		int i=0;
 		for(String s : data) {
 			//split "-",
 			//마지막인덱스 replace(".jar", "")
-			//length<2(버전없는지체크 
+			//length<2(버전없는지체크
 			//없으면 null값
 			//있으면 ->숫자체크 - 있으면 / 없으면 그전까지?
-			
+
 			String[] list = s.split("-");
-			
+
 			String check = list[list.length-1].replace(".jar","");
-			
+
 			version[i] = list.length < 2 ? null : appendix.contains(check) ? list[list.length-2]+"-"+check : check;
 			System.out.println(s+":"+i+"_________"+version[i]);
 			i++;
-			
+
 		}
-		
+
 		return version;
 	}
 

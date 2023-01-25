@@ -20,7 +20,7 @@ public class T4_브루트포스_BJ2304 {
 
 		int CNT = Integer.parseInt(br.readLine());
 		StringBuilder sb = new StringBuilder();
-	
+
 		for(int i=0;i<CNT;i++) {
 			int D = Integer.parseInt(br.readLine());
 			StringTokenizer st = new StringTokenizer(br.readLine()," ");
@@ -34,7 +34,7 @@ public class T4_브루트포스_BJ2304 {
 	public static long solution(long[] map) {
 		long sum=0;
 		long max=0;
-		
+
 		for(int i=map.length-1;i>-1;i--) {
 			if(map[i]>max) {
 				max = Math.max(max, map[i]);

@@ -4,7 +4,7 @@ package coding07_algo41_50;
 public class RGBDistance42DP {
 
 	public static void main(String[] args) {
-		
+
 
 	}
 

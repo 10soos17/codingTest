@@ -1,7 +1,5 @@
 package coding07_algo41_50;
 
-import java.util.Scanner;
-
 //[완전탐색 (Exhaustive search, Brute force)]
 //모든 경우의 수를 시도해보는 방법
 //상대적으로 구현이 간단, 해가 존재한다면 항상 찾게 됨
@@ -11,11 +9,11 @@ import java.util.Scanner;
 //ex.
 //1.순차탐색(sequential search) : 검색(O(n))
 
-//경우의 수 
-//순열(permutation) : 선택 순서가 결과에 영향을 미치는 경우 
+//경우의 수
+//순열(permutation) : 선택 순서가 결과에 영향을 미치는 경우
 //조합(combination) : 선택 순서가 결과에 영향을 주지 않는 경우
 
-//조합 - 가장 큰 두 수의 합 구하기 
+//조합 - 가장 큰 두 수의 합 구하기
 //https://www.youtube.com/watch?v=CDLBg6wbhUQ&list=PL6YHvWRMtz7CbOmh5Id4DERE5gyQC50XS&index=4
 public class Combination55 {
 	static int n = 4;

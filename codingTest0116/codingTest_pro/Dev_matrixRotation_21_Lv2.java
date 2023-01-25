@@ -10,9 +10,9 @@ public class Dev_matrixRotation_21_Lv2 {
 		int r=6;
 		int c=6;
 		int[][] q= {{2,2,5,4},{3,3,6,6},{5,1,6,3}};
-		
+
 		solution(r,c,q);
-		
+
 	}
 
 	public static int[] solution(int rows, int columns, int[][] queries) {

@@ -18,7 +18,7 @@ import java.util.TreeMap;
 //	18 g
 //	26 h
 //	24 i
-//	28 j	
+//	28 j
 
 public class T_BJ_matchingPlayer {
 
@@ -27,20 +27,20 @@ public class T_BJ_matchingPlayer {
 		ArrayList<String> list = new ArrayList<>();
 		TreeMap<String, Integer> inMap = new TreeMap<>();
 		Map<String, TreeMap<String, Integer>> map = new TreeMap<>();
-		
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
 		st = new StringTokenizer(br.readLine());
-		
+
 		int PLAYER = Integer.parseInt(st.nextToken());
 		int LIMIT = Integer.parseInt(st.nextToken());
-		
+
 		for (int i = 0; i < PLAYER; i++) {
 			st = new StringTokenizer(br.readLine());
 			int level = Integer.parseInt(st.nextToken());
 			String name = st.nextToken();
 			boolean flag = false;
-			
+
 			if(i==0) {
 				inMap.put(name, level);
 				String room = level + " " + name;
@@ -48,22 +48,21 @@ public class T_BJ_matchingPlayer {
 				map.put(room, inMap);
 				continue;
 			}
-	
-			for(int j=0;j<list.size();j++) {	
-				String roomKey = list.get(j);
+
+			for (String roomKey : list) {
 				inMap = map.get(roomKey);
-				
+
 				int rLevel = Integer.parseInt(roomKey.split(" ")[0]);
-				
+
 				if(Math.abs(rLevel-level) <= 10 && map.get(roomKey).size() < LIMIT) {
-					inMap = map.get(list.get(j));
+					inMap = map.get(roomKey);
 					inMap.put(name, level);
-					map.put(list.get(j), inMap);
+					map.put(roomKey, inMap);
 					flag = true;
 					break;
 				}
 			}
-			
+
 			if(!flag) {
 				inMap = new TreeMap<>();
 				inMap.put(name, level);
@@ -72,13 +71,13 @@ public class T_BJ_matchingPlayer {
 				map.put(room, inMap);
 			}
 		}
-		
+
 		for(int i=0;i<list.size();i++) {
 			inMap = map.get(list.get(i));
 			if(i!=0) System.out.println();
 			if(inMap.size() < LIMIT) System.out.print("Waiting!");
 			else System.out.print("Started!");
-			
+
 			for(String n :inMap.keySet()) {
 				System.out.println();
 				System.out.print(inMap.get(n) + " "+ n);

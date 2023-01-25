@@ -4,9 +4,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import javax.imageio.ImageIO;
-
 import java.sql.Timestamp;
+
+import javax.imageio.ImageIO;
 
 //param을 img x
 //return을 img / 검색이미지
@@ -31,14 +31,14 @@ public class PlayDung {
 			// String extension = IMAGE_URL.substring(IMAGE_URL.indexOf('.') + 1);
 			String extension = IMAGE_URL.substring(IMAGE_URL.lastIndexOf(".") + 1); // 확장자
 			String fileName = "test"; // 이미지 이름
-			
+
 			BufferedImage image = ImageIO.read(url);
-		
+
 			File file = new File("/Users/soos/Desktop/downImage/" + fileName + "." + extension);
 			if(!file.exists()) { // 해당 경로의 폴더가 존재하지 않을 경우
 				file.mkdirs(); // 해당 경로의 폴더 생성
 			}
-			
+
 			ImageIO.write(image, extension, file);
 
 		} catch (IOException e) {

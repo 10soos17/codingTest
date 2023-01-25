@@ -15,19 +15,19 @@ class T8_plusMinusNum {
 
 	public static int solution(int[] absolutes, boolean[] signs) {
 		int answer=0;
-		
+
 		for(int i=0;i<signs.length;i++) {
 			if(!signs[i]) {
 				answer-=absolutes[i];
 				continue;
 			}
 			answer+=absolutes[i];
-			
+
 		}
-		
+
 		return answer;
 	}
-	
+
 	//프로그래머스 다른 풀이
 	public static int solution2(int[] absolutes, boolean[] signs) {
 		int answer=0;
@@ -35,7 +35,7 @@ class T8_plusMinusNum {
             answer += absolutes[i] * (signs[i]? 1: -1);
 		return answer;
 	}
-	
+
 	//프로그래머스 다른 풀이
 	public static int solution3(int[] absolutes, boolean[] signs) {
 		int answer=0;

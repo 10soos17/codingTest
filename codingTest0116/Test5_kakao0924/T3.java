@@ -1,9 +1,6 @@
 package Test5_kakao0924;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 class T3 {
 
@@ -24,7 +21,7 @@ class T3 {
 		visited = new boolean[arr.length];
 		r = kk.length;
 		perm(0, k, kk);
-		
+
 		// int[] res = solution(k,kk);
 		// System.out.println(res[0]+":"+res[1]);
 
@@ -35,12 +32,12 @@ class T3 {
 		int sumI=0;
 		int cntI=0;
 
-		for (int i = 0; i < k.length; i++) {
+		for (int[] element : k) {
 
 			int sum = 0;
 
-			int myPercent = k[i][0];
-			int myLimit = k[i][1];
+			int myPercent = element[0];
+			int myLimit = element[1];
 
 			for (int j = 0; j < kk.length; j++) {
 
@@ -59,16 +56,16 @@ class T3 {
 				sum = 0;
 			}
 		}
-		
+
 		int[] answer = count(cntI, sumI);
 
-		
+
 
 		return answer;
 	}
-	
-	
-	
+
+
+
 	static void perm(int dep, int[][] k, int[] kk) {
 
 		if (dep == r) {
@@ -91,7 +88,7 @@ class T3 {
 		}
 
 	}
-	
+
 	static int[] count(int cnt, int sum) {
 
 		if (answer[0] < cnt) {
@@ -115,35 +112,35 @@ class T3 {
 //for(int i=0;i<k.length;i++) {
 //	int percent = k[i][0];
 //	int limit = k[i][1];
-//	
+//
 //	if(map.containsKey(percent)) continue;
-//	
-//	// 
+//
+//	//
 //	ArrayList<Integer> list = new ArrayList<Integer>();
 //	int cnt = 0;
 //	int max = 0;//Integer.MAX_VALUE/2;
-//	
+//
 //	for(int j=0;j<k.length;j++) {
 //		int sum=0;
-//		
+//
 //		int thisPercent = k[j][0];
 //		int thisLimit = k[j][1];
-//		
+//
 //		if(thisPercent<percent) continue;
-//		
+//
 //		for(int u=0;u<kk.length;u++) {
 //			sum+=thisPercent * kk[u]/100;
 //		}
-//		
+//
 //		if(sum>thisLimit) cnt++;
 //		else {
 //			max = Math.max(sum, max);
 //		}
 //		list.add(cnt);
 //		list.add(max);
-//		
+//
 //		cnt=0;
-//		
+//
 //	}
 //	map.put(percent, list);
 //}
@@ -158,5 +155,5 @@ class T3 {
 //		m=Math.max(m, l.get(1));
 //	}
 //}
-//answer[0] = c; 
-//answer[1] = m; 
+//answer[0] = c;
+//answer[1] = m;

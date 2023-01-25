@@ -19,10 +19,10 @@ public class T35_checkCharacter {
 //["AN", "CF", "MJ", "RT", "NA"]	[5, 3, 2, 7, 5]	"TCMA"
 //["TR", "RT", "TR"]	[7, 1, 3]	"RCJA"
 
-//캐릭터 : 첫 - 비동의 , 둘 - 동의 
+//캐릭터 : 첫 - 비동의 , 둘 - 동의
 //123(321)
 //4(0)
-//567(123) 
+//567(123)
 //
 	public static void main(String[] args) {
 		int n = 5;

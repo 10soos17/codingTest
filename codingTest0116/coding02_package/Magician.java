@@ -7,13 +7,13 @@ public class Magician extends Character implements ICharacter{
 	@Override
 	public void attack(Hero hero) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void attack(Person person) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

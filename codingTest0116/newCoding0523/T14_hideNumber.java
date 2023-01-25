@@ -1,6 +1,6 @@
 package newCoding0523;
 
-//전화번호가 문자열 phone_number로 주어졌을 때, 
+//전화번호가 문자열 phone_number로 주어졌을 때,
 //전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수
 //phone_number	return
 //"01033334444"	"*******4444"
@@ -26,7 +26,7 @@ public class T14_hideNumber {
 
 //        answer+=phone_number.substring(0,phone_number.length()-4);
 //        phone_number=phone_number.substring(phone_number.length()-4,phone_number.length());
-//        
+//
 		for (int i = 0; i < phone_number.length(); i++) {
 			if (i >= phone_number.length() - 4) {
 

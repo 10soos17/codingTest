@@ -28,10 +28,10 @@ class T3 {
 		int[] l = { 2, 4 };
 		int[] ll = { 1, 3, 5 };
 
-		String[] sl = {"cent", "center", 
-				"term", "terminus", 
-				"rm", 
-				"min", "minus", 
+		String[] sl = {"cent", "center",
+				"term", "terminus",
+				"rm",
+				"min", "minus",
 				"us"};
 		String[] sll = {};
 
@@ -47,19 +47,19 @@ class T3 {
 
 	public static int solution(String s, String[] sl) {
 		int answer = 0;
-		
+
 		List<String> list = new ArrayList<>();
 		for(String word: sl) {
 			list.add(word);
 		}
-		
+
 		for(int i=0;i<list.size();i++) {
 			if(s.contains(sl[i])){
-			
+
 				System.out.println("test");
 			}
 		}
-		
+
 		return answer;
 	}
 

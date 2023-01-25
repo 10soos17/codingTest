@@ -10,7 +10,7 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 
 public class SSDungMessageReceiver implements IDungMessageReceiver {
-	
+
 	@Override
 	public void makeImage() {
 		String IMAGE_URL = "https://www.google.com/favicon.ico";

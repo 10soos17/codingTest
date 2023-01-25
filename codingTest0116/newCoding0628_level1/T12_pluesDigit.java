@@ -17,22 +17,22 @@ class T12_pluesDigit {
 	}
 	//답안1
     public static long solution(long n) {
-    	
+
     	long answer = 0;
-    	
+
     	while(n>0) {
     		answer+=n%10;
     		n/=10;
     	}
-    
+
 
 		return answer;
 	}
     //답안2
 	/*String[] num = String.valueOf(n).split("");
-	
+
 	for(String s : num) {
 		answer+=Integer.parseInt(s);
 	}*/
-   
+
 }

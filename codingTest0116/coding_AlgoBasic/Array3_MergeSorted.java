@@ -19,44 +19,44 @@ public class Array3_MergeSorted {
 
 	//정렬된 상태의 두 배열을 정렬되도록 합치기
 	public static void solution(int[] nums1,int[] nums2,int m,int n) {
-		
+
 		int num1Idx = m-1;
 		int num2Idx = n-1;
 		int wIdx = nums1.length-1;
-		
-		
+
+
 		if(num2Idx < 0) {
 			return;
 		}
-		
+
 		while(0<=num1Idx && 0 <= num2Idx) {
-			
+
 			int num1 = nums1[num1Idx];
 			int num2 = nums2[num2Idx];
-			
+
 			if(num2 <= num1) {
-				
+
 				nums1[wIdx] = num1;
 				num1Idx--;
 				wIdx--;
-				
+
 			}else {
-				
+
 				nums1[wIdx] = num2;
 				num2Idx--;
 				wIdx--;
 			}
 		}
-		
+
 		while(0<=num2Idx) {
 			nums1[wIdx] = nums2[num2Idx];
 			num2Idx--;
 			wIdx--;
 		}
-		
+
 		System.out.println(Arrays.toString(nums1));
-		
-		
+
+
 	}
 
 }

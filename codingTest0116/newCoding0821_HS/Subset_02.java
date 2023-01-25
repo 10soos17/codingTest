@@ -9,27 +9,27 @@ public class Subset_02 {
 	static int cnt;
 
 	static void subset(int dep) {
-		
-		
+
+
 		if(dep==3) {
-			for(int i=0;i<len-1;i++) 
+			for(int i=0;i<len-1;i++)
 				System.out.print(", " + (visited[i] ? tmp[i] : "X"));
-			
+
 			System.out.println();
 			return;
 		}
-		
-		
+
+
 		visited[dep] = true;
 		tmp[dep] = arr[dep];
 		subset(dep+1);
-		
+
 		visited[dep] = false;
 		tmp[dep] = arr[dep];
 		subset(dep+1);
-		
-		
-		
+
+
+
 	}
 
 

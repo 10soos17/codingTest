@@ -19,7 +19,7 @@ public class ClassRehearse_fileIO {
 
 //=================== String <-> Byte=========================================================
 		byte[] bytes = { 72, 101, 108, 108, 111, 32, 74, 97, 118, 97 };
-		
+
 		String str11 = new String(bytes);
 		System.out.println(str11);
 
@@ -34,7 +34,7 @@ public class ClassRehearse_fileIO {
 			do {
 				str = br.readLine();//컴파일 에러 발생 try~catch
 				System.out.println(str);
-			
+
 			}while(!(str == null));
 			br.close();
 			fr.close();
@@ -44,7 +44,7 @@ public class ClassRehearse_fileIO {
 			System.out.println("파일을 읽을 수 없습니다.");
 		}
 		System.out.println("Done");
-		
+
 //===================파일 읽기2 =========================================================
 		FileReader fr = null;
 		try {
@@ -90,7 +90,7 @@ public class ClassRehearse_fileIO {
 			}
 		}
 		System.out.println("종료");
-		
+
 //===================FileInputStream 읽기 1 =========================================================
 		FileInputStream fi = null;
 		try {
@@ -118,8 +118,8 @@ public class ClassRehearse_fileIO {
 			}
 		}
 		System.out.println("종료");
-		
-		//===================FileInputStream 읽기 2 =========================================================		
+
+		//===================FileInputStream 읽기 2 =========================================================
 		FileInputStream fi1 = null;
 		try {
 			fi1 = new FileInputStream(args[0]);
@@ -148,16 +148,16 @@ public class ClassRehearse_fileIO {
 			}
 		}
 		System.out.println("종료");
-		
-//===================FileOutputStream 쓰기 =========================================================		
+
+//===================FileOutputStream 쓰기 =========================================================
 		FileOutputStream fo = null;
 		try {
 			fo = new FileOutputStream("../../output.dat");
 			byte[] arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
 
-			for (int i = 0; i < arr.length; i++) {
+			for (byte element : arr) {
 				try {
-					fo.write(arr[i]);
+					fo.write(element);
 				} catch (IOException e) {
 					System.out.println("error");
 				}
@@ -171,8 +171,8 @@ public class ClassRehearse_fileIO {
 
 			}
 		}
-		
+
 	}
-	
-	
+
+
 }

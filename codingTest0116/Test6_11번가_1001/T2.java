@@ -1,7 +1,5 @@
 package Test6_11번가_1001;
 
-import java.util.*;
-
 class T2 {
 
 //	static int r = 3;
@@ -11,14 +9,14 @@ class T2 {
 	public static void main(String[] args) {
 
 		String s = "hello";
-		
+
 		int n = 5;
 		int m = 24;
 		int p = 4;
 
 		int[] l = { 2, 4};
 		int[] ll = { 1,3,5 };
-		
+
 		String[] sl = { };
 		String[] sll = { };
 
@@ -26,7 +24,7 @@ class T2 {
 		int[][] kk = { { 3, 4 }, { 5, 6 } };
 
 		boolean[] b = { true, false, true };
-		
+
 		String res = solution(s);
 		System.out.println(res);
 
@@ -47,7 +45,7 @@ class T2 {
 	        	 // System.out.println(occurrences[i]);
 	        	//  System.out.println(S.charAt(i)+"");
 	            if (occurrences[i] > best_res) {
-	                best_char = (char)((int)'a' + i);
+	                best_char = (char)('a' + i);
 	                best_res  = occurrences[i];
 	                System.out.println(best_char);
 	            }

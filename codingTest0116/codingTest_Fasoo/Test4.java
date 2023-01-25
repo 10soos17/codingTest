@@ -1,8 +1,5 @@
 package codingTest_Fasoo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 ////char 사용시 유의
 //(char)(‘0’+val);
 

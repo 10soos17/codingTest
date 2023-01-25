@@ -1,7 +1,7 @@
 package Test4_line0924;
 
-import java.util.*;
-import java.util.regex.Pattern;
+import java.util.HashMap;
+import java.util.Map;
 
 class T2 {
 
@@ -39,9 +39,7 @@ class T2 {
 		String[] split = s.split(" ");
 		Map<String, Integer> sCnt = new HashMap<>();
 
-		for (int i = 0; i < split.length; i++) {
-			String sc = split[i];
-
+		for (String sc : split) {
 			String fir = sc.charAt(0) + "";
 			String sec = sc.charAt(sc.length() - 1) + "";
 
@@ -63,29 +61,24 @@ class T2 {
 			}
 
 			boolean check = false;
-			
-			for(int j=0;j<sl.length;j++) {
-				
+
+			for (String element : sl) {
+
 				for(String ss : sCnt.keySet()) {
 					String c = sc.replaceAll("[.]", "");
-					int idx = sl[j].indexOf(c)-sCnt.get(ss);
-					int idxx =sCnt.get(ss)-sl[j].length()-sl[j].indexOf(c)+c.length();
-					if(sl[j].contains(c)) {
-						if((ss.charAt(0)+"").equals(".") && idx>1) {
+					int idx = element.indexOf(c)-sCnt.get(ss);
+					int idxx =sCnt.get(ss)-element.length()-element.indexOf(c)+c.length();
+					if(element.contains(c)) {
+						if(((ss.charAt(0)+"").equals(".") && idx>1) || ((ss.charAt(ss.length()-1)+"").equals(".") && idxx>1)) {
 							ns+=sc.replaceAll(".", "#") + " ";
 							check=true;
 							break;
 						}
-						if((ss.charAt(ss.length()-1)+"").equals(".") && idxx>1) {
-							ns+=sc.replaceAll(".", "#") + " ";
-							check=true;
-							break;
-						}
-							
+
 					}
-					
+
 				}
-				
+
 				if(check) break;
 
 			}
@@ -95,14 +88,13 @@ class T2 {
 		return ns;
 	}
 
-	
+
 
 	static String solution(int n, String[] sl, String s) {
 		String ns = "";
 		String[] split = s.split(" ");
 
-		for (int i = 0; i < split.length; i++) {
-			String sc = split[i];
+		for (String sc : split) {
 			int cnt = 0;
 			for (int j = 0; j < sc.length(); j++) {
 				if ((sc.charAt(j) + "").equals(".")) {
@@ -118,10 +110,10 @@ class T2 {
 
 			boolean check = false;
 
-			for (int k = 0; k < sl.length; k++) {
+			for (String element : sl) {
 				System.out.println(sc);
-				System.out.println(sl[k]);
-				if (sl[k].equals(sc)) {
+				System.out.println(element);
+				if (element.equals(sc)) {
 					ns += sc.replaceAll(".", "#") + " ";
 					check = true;
 					break;
@@ -131,14 +123,14 @@ class T2 {
 					for (int g = 0; g < sc.length(); g++) {
 						// System.out.println(sc);
 						String one = sc.charAt(g) + "";
-						String two = sl[k].charAt(g) + "";
+						String two = element.charAt(g) + "";
 
 						String fir = sc.charAt(0) + "";
 						String sec = sc.charAt(sc.length() - 1) + "";
 
 						if (fir.equals(".") || sec.equals(".")) {
 							String c = sc.replaceAll("[.]", "");
-							if (sl[k].contains(c)) {
+							if (element.contains(c)) {
 								check = true;
 								ns += sc.replaceAll(".", "#") + " ";
 								break;

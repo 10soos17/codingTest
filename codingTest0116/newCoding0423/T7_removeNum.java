@@ -1,7 +1,6 @@
 package newCoding0423;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 
 class T7_removeNum {
 //	배열 arr에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.
@@ -29,10 +28,10 @@ class T7_removeNum {
 			idxx++;
 		}
 		s.add(numbers[idxx-1]);
-		
+
 		return s;
 
 	}
-	
+
 
 }

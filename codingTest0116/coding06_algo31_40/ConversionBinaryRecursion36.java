@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class ConversionBinaryRecursion36 {
 
 	public static void decToBin(int N) {
-		
+
 		if(N/2 == 0) {
 			System.out.print(N + " ");
 			return;
 		}
-		
+
 		decToBin(N/2);
 		System.out.print(N%2 + " ");
 	}
@@ -21,10 +21,10 @@ public class ConversionBinaryRecursion36 {
 		//4..0
 		//2..0
 		//1..0
-		
+
 		Scanner scan = new Scanner(System.in);
 		int input = scan.nextInt();
-		
+
 		decToBin(input);
 
 	}

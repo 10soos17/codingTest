@@ -3,13 +3,13 @@ package coding08_kakao;
 import java.util.HashMap;
 
 public class ChangeNumToChar2021 {
-	
+
 	public static HashMap<String, Integer> map;
-	
+
 	public static void main(String[] args) {
-		
+
 		map = new HashMap<>();
-		
+
 		map.put("zero",0);
 		map.put("one",1);
 		map.put("two",2);
@@ -25,11 +25,11 @@ public class ChangeNumToChar2021 {
 
 	}
     public static int solution(String s) {
- 
+
         for(String str : map.keySet()) {
         	map.get(str);
         	s=s.replaceAll(str, String.valueOf(map.get(str)));
- 
+
         }
         System.out.println(s);
         return Integer.parseInt(s);

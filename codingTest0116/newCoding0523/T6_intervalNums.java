@@ -1,7 +1,5 @@
 package newCoding0523;
 
-import java.util.Arrays;
-
 //정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴
 //x	n	answer
 //2	5	[2,4,6,8,10]
@@ -17,7 +15,7 @@ public class T6_intervalNums {
 		}
 	}
 
-//(long) 형변환 해줘야 함 
+//(long) 형변환 해줘야 함
 	public static long[] solution(int x, int n) {
 		long[] answer = new long[n];
 

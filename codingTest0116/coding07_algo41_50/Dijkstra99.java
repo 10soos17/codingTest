@@ -1,13 +1,11 @@
 package coding07_algo41_50;
 
-import java.util.LinkedList;
 import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Scanner;
 
 //Dijkstra
 //Greedy : 선택마다 가까운 노드부터 탐색, 음의 가중치는 허용하지 않음
-//Dynamic programming : 새로운 노드까지의 최단 경로를 구하기 위해서 이전에 계산한 결과를 사용 
+//Dynamic programming : 새로운 노드까지의 최단 경로를 구하기 위해서 이전에 계산한 결과를 사용
 
 
 public class Dijkstra99 {
@@ -21,12 +19,12 @@ public class Dijkstra99 {
 		Scanner sc = new Scanner(System.in);
 		N=sc.nextInt();
 		E=sc.nextInt();
-		
+
 		for(int i=0;i<N;++i) {
 			for(int j=0;j<N;++j) {
 				if(i==j)Graph[i][j] =0;
 				else Graph[i][j] = INF;
-				
+
 			}
 		}
 		for(int i=0;i<E;++i) {
@@ -34,13 +32,13 @@ public class Dijkstra99 {
 			int v=sc.nextInt();
 			int cost = sc.nextInt();
 			Graph[u][v] = Graph[v][u] = cost;
-			
+
 		}
-		
+
 		for(int i=0;i<N;++i)
 			System.out.println(solve(0,i));
-		
-	
+
+
 	}
 
 	public static int solve(int src, int dst) {
@@ -54,7 +52,7 @@ public class Dijkstra99 {
 			int u = curr[1];
 			if(u==dst) return curr[0];
 			if(visited[u]) continue;
-			
+
 			visited[u] = true;
 			for(int v=0;v<N;++v) {
 				if(Dist[v] > Dist[u] + Graph[u][v]) {

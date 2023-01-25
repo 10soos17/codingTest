@@ -1,9 +1,10 @@
 package newCoding0821_HS;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-//[8기 07회차] B반_알고리즘 응용_과목평가 
+//[8기 07회차] B반_알고리즘 응용_과목평가
 //문제 2-2 예제 입력
 
 //2
@@ -15,15 +16,15 @@ import java.util.*;
 public class T_HS_smartClub2 {
 
 	static StringBuilder sb;
-	
+
 	static int town;
 	static int ps;
-	
+
 	static int dia;
 	static int distance;
-	
+
 	static int ans;
-	
+
 	static int[] list;
 	static int[] tmp;
 
@@ -32,7 +33,7 @@ public class T_HS_smartClub2 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
 		st = new StringTokenizer(br.readLine());
-		
+
 		int TC = Integer.parseInt(st.nextToken());
 
 		sb = new StringBuilder();
@@ -71,7 +72,7 @@ public class T_HS_smartClub2 {
 			for (int i = 0; i < town; i++) {
 				int min = 987654321;
 				for (int j = 0; j < ps; j++) {
-					min = Math.min(Math.abs(list[i] - tmp[j]), 
+					min = Math.min(Math.abs(list[i] - tmp[j]),
 								   Math.min(dia - Math.abs(list[i] - tmp[j]), min)
 								  );
 

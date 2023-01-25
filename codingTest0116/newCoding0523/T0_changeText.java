@@ -16,13 +16,13 @@ public class T0_changeText {
 	public static String solution(String text) {
 		String answer = "";
 		int count = 0;
-		
+
 		for (int i = 0; i < text.length(); i++) {
 
 			String t = "" + text.charAt(i);
-			
+
 			if(t.equals(" ")) {
-				//System.out.println(t);	
+				//System.out.println(t);
 				answer+= " ";
 				count = 0;
 				continue;
@@ -32,7 +32,7 @@ public class T0_changeText {
 				answer += t.toUpperCase();
 				count++;
 				continue;
-				
+
 			}
 			answer += t.toLowerCase();
 			count++;

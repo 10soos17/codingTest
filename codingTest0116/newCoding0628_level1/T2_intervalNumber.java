@@ -2,7 +2,7 @@ package newCoding0628_level1;
 
 
 class T2_intervalNumber {
-//	정수 x와 자연수 n을 입력 받아, 
+//	정수 x와 자연수 n을 입력 받아,
 //	x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴
 //	x	n	answer
 //	2	5	[2,4,6,8,10]
@@ -14,7 +14,7 @@ class T2_intervalNumber {
 		int[] res =solution(n,m);
 		for(int i : res) {
 			System.out.println(i);
-			
+
 		}
 	}
 
@@ -25,8 +25,8 @@ class T2_intervalNumber {
 			answer[m-1] = m*n;
 			m--;
 		}
-	
-		
+
+
 		return answer;
 	}
 }

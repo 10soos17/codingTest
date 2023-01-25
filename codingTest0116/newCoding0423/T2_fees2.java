@@ -6,7 +6,7 @@ import java.util.TreeMap;
 public class T2_fees2 {
 	public static void main(String[] args) {
 		// 기본 시간(분) 기본 요금(원) 단위 시간(분) 단위 요금
-		
+
 		//[120, 0, 60, 591], ["16:00 3961 IN", "16:00 0202 IN", "18:00 3961 OUT", "18:00 0202 OUT", "23:58 3961 IN"]
 		int[] f = {120, 0, 60, 591};//{ 180, 5000, 10, 600 };
 		String[] r = {"16:00 3961 IN", "16:00 0202 IN", "18:00 3961 OUT", "18:00 0202 OUT", "23:58 3961 IN"};

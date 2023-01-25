@@ -7,9 +7,9 @@ public class T2 {
 		boolean m = true;
 
 		int[][] res = solution(n, m);
-		for (int i = 0; i < res.length; i++) {
+		for (int[] re : res) {
 			for (int j = 0; j < res[0].length; j++) {
-				System.out.println(res[i][j]);
+				System.out.println(re[j]);
 			}
 		}
 
@@ -30,7 +30,7 @@ public class T2 {
 				int num = gap % 2;
 				switch (num) {
 				case 0:
-				
+
 					System.out.println(1);
 					for (int i = idxC; i <= gap; i++) {
 						idxC++;
@@ -43,18 +43,18 @@ public class T2 {
 
 					System.out.println(2);
 					for (int i = idxR; i >= 0; i--) {
-						
+
 						answer[idxR][idxC] = sign;
 						sign++;
 						limit--;
 						idxC--;
-				
+
 						mapPrint(answer);
 					}
 					idxR++;
 
 				case 1:
-	
+
 					System.out.println(3);
 					for (int i = idxR; i <= gap; i++) {
 						idxR++;
@@ -84,7 +84,7 @@ public class T2 {
 			while (limit > 0) {
 				int num = gap % 2;
 				switch (num) {
-				
+
 				case 0:
 					idxR--;
 					idxC++;
@@ -106,7 +106,7 @@ public class T2 {
 						mapPrint(answer);
 					}
 					idxC--;
-					
+
 				case 1:
 					idxR--;
 					idxC++;
@@ -130,8 +130,8 @@ public class T2 {
 						mapPrint(answer);
 					}
 					idxC++;
-					
-					
+
+
 
 				}
 				gap++;
@@ -143,10 +143,10 @@ public class T2 {
 
 	public static void mapPrint(int[][] res) {
 
-		for (int i = 0; i < res.length; i++) {
+		for (int[] re : res) {
 			for (int j = 0; j < res[0].length; j++) {
 
-				System.out.print(res[i][j] + " ");
+				System.out.print(re[j] + " ");
 			}
 			System.out.println();
 		}

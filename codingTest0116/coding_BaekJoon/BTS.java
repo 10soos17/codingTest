@@ -1,6 +1,5 @@
 package coding_BaekJoon;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 //https://www.youtube.com/watch?v=D1ad7UCbWHY&list=PLi-xJrVzQaxUVf9DWyUdEzhJB0dGvvgrk&index=8
@@ -27,9 +26,9 @@ public class BTS {
 		arr2 = new int[]{ 1, 3, 7, 9, 5};
 		solution();
 	}
-	
+
 	public static void bts(int start, int end, int target) {
-		
+
 		if(start==end) {
 			if(arr[start] == target) {
 				System.out.println(1);
@@ -38,15 +37,15 @@ public class BTS {
 			}
 			return;
 		}
-		
+
 		int mid=(start+end)/2;
-		
+
 		if(arr[mid] < target) {
 			bts(mid+1,end,target);
 		}else {
 			bts(start,mid,target);
 		}
-		
+
 	}
 
 	public static void solution() {
@@ -54,6 +53,6 @@ public class BTS {
 		for(int i:arr2) {
 			bts(0,n-1,i);
 		}
-		
+
 	}
 }

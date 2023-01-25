@@ -19,11 +19,11 @@ class T1 {
 		int p = 4;
 
 		String[] l = {"Z 3","D 5"};//{ "A 6", "B 12", "C 3" };
-		String[] ll = { 
-				"2019.01.01 D", 
-				"2019.11.15 Z", 
-				"2019.08.02 D", 
-				"2019.07.01 D", 
+		String[] ll = {
+				"2019.01.01 D",
+				"2019.11.15 Z",
+				"2019.08.02 D",
+				"2019.07.01 D",
 				"2018.12.28 Z" };
 
 		String[] sl = {};
@@ -64,7 +64,7 @@ class T1 {
 
 			year += limit / 12;
 			month += limit%12;
-			
+
 			if(month>12) {
 				year+=1;
 				month=month/12;
@@ -79,21 +79,21 @@ class T1 {
 			} else {
 				day -= 1;
 			}
-			
+
 			System.out.println(year + ":" + month + ":" + day);
 			String date = ""+year;
-			
+
 			date = month<10 ? date+="0"+month : date+month;
 			date = day<10 ? date+="0"+day : date+day;
 			int numDate = Integer.parseInt(date);
-			
-			
+
+
 			if(thisDate > numDate) {
 				a[cnt] = i+1;
 				cnt++;
 			}
 		}
-		
+
 		int[] answer = new int[cnt];
 		for(int i=0;i<answer.length;i++) {
 			answer[i] = a[i];

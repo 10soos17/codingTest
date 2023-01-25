@@ -14,18 +14,18 @@ public class T1_primeNum {
         System.out.print(res+" ");
 
 	}
-	
+
     public static int solution(int n, int k) {
         int answer = 0;
         ArrayList<Integer> s = new ArrayList<>();
-  
+
         while(n>=k){
         	s.add(n%k);
         	n=n/k;
         }
-        s.add(n);	
+        s.add(n);
         //System.out.println(s);
-       
+
         ArrayList<Integer> nums = check(s);
         for(int i : nums) {
         	Boolean res = primeCheck(i);
@@ -33,11 +33,11 @@ public class T1_primeNum {
         }
         return answer;
     }
-    
+
     public static ArrayList<Integer> check(ArrayList<Integer> list) {
     	String s="";
     	ArrayList<Integer> nums = new ArrayList<>();
-    	
+
     	for(int i=list.size()-1;i >= 0;i--) {
     		if(list.get(i) == 0 && s!="") {
     			System.out.println(s);
@@ -53,7 +53,7 @@ public class T1_primeNum {
 //    	}
     	return nums;
     }
-    
+
     public static Boolean primeCheck(int num) {
     	if(num == 1)return false;
     	if(num == 2)return true;

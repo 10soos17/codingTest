@@ -1,9 +1,5 @@
 package codingTest_pro;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class greedy_makeBigNum {
 
 	public static void main(String[] args) {
@@ -21,9 +17,9 @@ public class greedy_makeBigNum {
 
 	 public static String solution(String number, int k) {
 	        String answer = "";
-	        
-	   
-	        
+
+
+
 	        return answer;
 	    }
 	}

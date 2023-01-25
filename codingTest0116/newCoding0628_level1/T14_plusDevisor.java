@@ -19,25 +19,25 @@ class T14_plusDevisor {
 
     	int answer=0;
     	int limit =num;
-    	
-    	if(num % Math.sqrt(num) ==0) answer += Math.sqrt(num);   	
+
+    	if(num % Math.sqrt(num) ==0) answer += Math.sqrt(num);
     	if(num == 1) return 1;
-    	
+
     	while(limit>Math.sqrt(num)+1){
-    		
+
     		if(num%limit==0) {
     			answer+=limit;
     			System.out.println(limit+":"+answer);
     			answer+=num/limit;
     			System.out.println(":"+answer);
     		}
-    		
+
     		limit-=1;
-    		
+
     	}
-    	
+
     	return answer;
-		
+
 	}
 
 }

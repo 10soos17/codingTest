@@ -16,7 +16,7 @@ class T28_plusSubmultiple {
 
 		int answer = 0;
 		int limit = num;
-		
+
 		if (num == 1) return 1;
 		if (num % Math.sqrt(num) == 0) answer += Math.sqrt(num);
 

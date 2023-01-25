@@ -6,7 +6,7 @@ public class DungFactory {
 		IDungMessageReceiver dungMessageReceiver = null;
 
 		switch (dung) {
-		
+
 		case BANANA:
 			dungMessageReceiver = new HSDungMessageReceiver();
 			break;

@@ -1,16 +1,12 @@
 package coding_BaekJoon;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 
 //https://www.youtube.com/watch?v=izYANwrHwvQ&list=PLi-xJrVzQaxUVf9DWyUdEzhJB0dGvvgrk&index=13
 //https://www.acmicpc.net/problem/11404
 
-//다익스트라: 한점에서 다른 점 최소비용 
+//다익스트라: 한점에서 다른 점 최소비용
 //아이디어
 /*
 5 (정점개수(v))
@@ -52,22 +48,22 @@ public class EveryShortestPath_플로이드 {
 	// map의 key = 정점
 	// map의 value = ArrayList<ArrayList<Integer>>로 간선별 저장
 	public static HashMap<Integer, ArrayList<ArrayList<Integer>>> putPath(int[][] arr) {
-		HashMap<Integer, ArrayList<ArrayList<Integer>>> edge = new HashMap<Integer, ArrayList<ArrayList<Integer>>>();
-		ArrayList<ArrayList<Integer>> mList = new ArrayList<ArrayList<Integer>>();
-		ArrayList<Integer> lList = new ArrayList<Integer>();
+		HashMap<Integer, ArrayList<ArrayList<Integer>>> edge = new HashMap<>();
+		ArrayList<ArrayList<Integer>> mList = new ArrayList<>();
+		ArrayList<Integer> lList = new ArrayList<>();
 
 
-		for (int i = 0; i < arr.length; i++) {
-			int p = arr[i][0];
-			int p2 = arr[i][1];
-			int w = arr[i][2];
+		for (int[] element : arr) {
+			int p = element[0];
+			int p2 = element[1];
+			int w = element[2];
 
 			if (edge.get(p) != null) {
 				mList = edge.get(p);
 			} else {
-				mList = new ArrayList<ArrayList<Integer>>();
+				mList = new ArrayList<>();
 			}
-			lList = new ArrayList<Integer>();
+			lList = new ArrayList<>();
 			lList.add(p2);
 			lList.add(w);
 			mList.add(lList);
@@ -102,30 +98,29 @@ public class EveryShortestPath_플로이드 {
 			ArrayList<ArrayList<Integer>> l = edge.get(point);
 				// System.out.println("point:"+point);
 
-				for (int i = 0; i < l.size(); i++) {
-					ArrayList<Integer> ll = l.get(i);
+				for (ArrayList<Integer> ll : l) {
 					int nv = ll.get(0);
 					int nw = ll.get(1);
 
 					dist[point][nv] = Math.min(dist[point][nv], nw);
-					
+
 				}
-			
+
 		}
-		
+
 		//j-------------->k
 		//j------>i------>k
-		for(int i = 1; i < v + 1; i++) {//거치는 값 
-			for(int j = 1; j < v + 1; j++) { //시작 
-				for(int k = 1; k < v + 1; k++) {//도착 
+		for(int i = 1; i < v + 1; i++) {//거치는 값
+			for(int j = 1; j < v + 1; j++) { //시작
+				for(int k = 1; k < v + 1; k++) {//도착
 					if(dist[j][k] > dist[j][i] + dist[i][k]) {
 						dist[j][k] = dist[j][i] + dist[i][k];
 					}
 				}
 			}
-			
+
 		}
-		
+
 
 		for (int i = 1; i < v + 1; i++) {
 			for (int j = 1; j < v + 1; j++) {

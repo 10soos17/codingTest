@@ -22,10 +22,10 @@ import java.util.Vector;
 //Stack : Last In First Out, LinkedList로 구성 가능
 
 
-//Arrays, List 정리 
+//Arrays, List 정리
 
 // Object----Collection-List-ArrayList
-// Object-Arrays(모든 메소드가 static) 
+// Object-Arrays(모든 메소드가 static)
 
 // List는 인터페이스(객체 생성 x)-ArrayList의 부모
 //ex. List<Object> arr = Arrays.asList(1,2,"aaa");
@@ -77,13 +77,13 @@ public class ClassRehearse_Array {
 		// Array -> List로 복사
 		String[] str = { "d", "a", "b", "c" };
 		List<String> list11 = Arrays.asList(str);
-		
+
 		// 정렬
 		Collections.sort(list11);// 재정의 불필요
 		System.out.println("ar3 Sort(): " + list11);
-		
 
-		
+
+
 		// List계열============================================================================
 
 		List<String> list111 = Arrays.asList("홍길동1","홍길동2","홍길동3");
@@ -116,34 +116,34 @@ public class ClassRehearse_Array {
 
 		System.out.println("첫번째 사과(index) : " + index1);
 		System.out.println("마지막 사과(index) : " + index2);
-		
-		
-		//Queue - LinkedList로============================================================================ 
-		LinkedList<String> queue = new LinkedList<String>();
+
+
+		//Queue - LinkedList로============================================================================
+		LinkedList<String> queue = new LinkedList<>();
         queue.offer("토끼");//입력
        	queue.offer("사슴");
         queue.offer("거북이");
-        
+
         System.out.println(queue);
         while(!queue.isEmpty()) {
-        	String str1111 = queue.poll();//출력후 
+        	String str1111 = queue.poll();//출력후
 
         	System.out.println(str1111);
 //        	String str = queue.peek();//출력후 데이터 제거X
         }
-        
-        Queue<String> q = new LinkedList<String>();
+
+        Queue<String> q = new LinkedList<>();
         q.add("Java");
         q.add("JavaScript");
         q.add("Jsp");
         while(!q.isEmpty()) {
-//        	String str = q.poll();//출력후 
+//        	String str = q.poll();//출력후
 //        	String str = queue.peek();//출력후 데이터 제거X
         	String str3 = q.remove();//출력후 제거
         	System.out.println(str3);
         }
         //Stack - LinkedList로 ============================================================================
-		LinkedList<Integer> stack = new LinkedList<Integer>();
+		LinkedList<Integer> stack = new LinkedList<>();
 		stack.addLast(12);
 		stack.addLast(new Integer(59));
 		stack.addLast(7);
@@ -153,8 +153,8 @@ public class ClassRehearse_Array {
         	System.out.println(num11);
         }
         System.out.println();
-        
-        Stack<String> s = new Stack<String>();
+
+        Stack<String> s = new Stack<>();
         s.push("강남구");
         s.push("송파구");
         s.push("마포구");
@@ -162,9 +162,9 @@ public class ClassRehearse_Array {
         	System.out.println(s.pop());//출력후 데이터 제거
         	System.out.println(s.peek());
         }
-		
-		
-		
+
+
+
 	}
 
 }

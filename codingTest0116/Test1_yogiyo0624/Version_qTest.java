@@ -37,14 +37,14 @@ public class Version_qTest {
 
 		String version;
 		boolean snapshot;
-		
+
 		public Version() {
 			IllegalArgumentException e = new IllegalArgumentException(errorVersionMustNotBeNull);
 			throw e;
 		}
 
 		public Version(String version) {
-			
+
 			// regular expression check
 			String reg = "\\d+(\\.\\d+){0,2}(-SNAPSHOT)?";//"^[0-9][.]{3}[-SNAPSHOT]?";//"\d+(\.\d+){0,2}(-SNAPSHOT)?";
 			Pattern p = Pattern.compile(reg);
@@ -55,7 +55,7 @@ public class Version_qTest {
 			}
 
 			this.version = version;
-			
+
 			System.out.println(this.version);
 
 		}
@@ -63,8 +63,8 @@ public class Version_qTest {
 		boolean isSnapshot() {
 			this.snapshot=this.version.endsWith("-SNAPSHOT");
 			return this.snapshot;
-		};
-		
+		}
+
 		public int compareCheck() {
 			String trim=this.version;
 			if(isSnapshot()){
@@ -73,9 +73,9 @@ public class Version_qTest {
 			trim = trim.replace(".", "");
 			System.out.println(trim);
 			int intVersion = Integer.parseInt(trim);
-			
+
 			return intVersion;
-			
+
 		}
 
 		@Override

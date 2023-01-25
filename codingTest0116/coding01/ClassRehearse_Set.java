@@ -13,21 +13,21 @@ public class ClassRehearse_Set {
 
 	public static void main(String[] args) {
 		//Set============================================================================
-		HashSet<String> hs = new HashSet<String>();
+		HashSet<String> hs = new HashSet<>();
 		hs.add("Java");
 		hs.add("JavaScript");
 		hs.add("jQuery");
 		hs.add("AJax");
 		hs.add("AJax");
-		
+
 		System.out.println("주머니의 크기: "+hs.size());
 		System.out.println(hs);
-		
+
 		//advanced for
 		for(String s : hs)
 			System.out.print(s+" ");
 		System.out.println();
-		
+
 		//iterator()
 		Iterator<String> it = hs.iterator();
 		while(it.hasNext()) {
@@ -37,15 +37,15 @@ public class ClassRehearse_Set {
 		//TreeSet============================================================================
 		TreeSet<Integer> t = new TreeSet<>();
 		int[] score= {80,95,50,35,45,65,10,100};
-		
+
 		Integer it1 = null;
 		//방법1
 		t.add(new Integer(80));
-		
+
        //방법2
-		for(int i=0; i<score.length; i++)
-			t.add(new Integer(score[i]));
-		
+		for (int element : score)
+			t.add(new Integer(element));
+
 		System.out.println(t);//자동 오름차순
 		System.out.println("가장 낮은 점수: "+t.first());//last
 		System.out.println("65 아래 점수: "+t.lower(65));//higher
@@ -59,21 +59,21 @@ public class ClassRehearse_Set {
 		NavigableSet<Integer> ns = 	t.descendingSet();
 		for(Integer s : ns)
 			System.out.print(s+" ");
-		
+
 		System.out.println();
-		
+
 		TreeSet<String> ts = new TreeSet<>();
 		ts.add("apple");
 		ts.add("forever");
 		ts.add("description");
-	
+
 		System.out.println(ts);
 		//c<= 값 <= f
 		NavigableSet<String> ns11 = 	ts.subSet("c", true, "f", true);
 		for(String s : ns11)
 			System.out.print(s+" ");
-	
-		
+
+
 	}
 
 }

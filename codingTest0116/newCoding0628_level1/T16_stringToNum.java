@@ -19,9 +19,9 @@ class T16_stringToNum {
 		// System.out.println(res[0]+":"+res[n.length-2]);
 
 	}
-	
+
 	//답안1
-	//더 빠름 
+	//더 빠름
 	public static int solution(String s) {
 		int answer = 0;
 		String i = s.charAt(0)+"";
@@ -29,11 +29,11 @@ class T16_stringToNum {
 			return Integer.parseInt(s.substring(1, s.length()));
 		}
 		answer = Integer.parseInt(s);
-		
+
 		return answer;
 
 	}
-	
+
 
 
 }

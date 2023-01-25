@@ -10,7 +10,7 @@ public class T2 {
 		int res = solution(n);
 
 		System.out.println(res);
-		
+
 	}
 
 	public static int solution(int[] n) {
@@ -30,9 +30,9 @@ public class T2 {
 				n[i]-=1;
 				answer++;
 			}
-	
+
 		}
-		
+
 		return answer;
 	}
 

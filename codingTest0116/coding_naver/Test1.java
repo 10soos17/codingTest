@@ -1,13 +1,7 @@
 package coding_naver;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 ////char 사용시 유의
 //(char)(‘0’+val);
@@ -68,7 +62,7 @@ public class Test1 {
 //		{
 //			logs[i] = scanner.nextLine().trim();
 //		}
-//		
+//
 		String[] logs = { "SMS 010-1234-5678", "CALL 010-1234-5678", "CALL 010-1234-5678", "SMS 010-1111-1111",
 				"SMS 010-5555-5555", "CALL 010-5555-5555", "CALL 010-5555-5555", "CALL 010-4444-4444",
 				"SMS 010-5555-5555", "CALL 010-5555-5555" };
@@ -78,7 +72,7 @@ public class Test1 {
 
 	public static void solution(String[] logs, int n) {
 
-		ArrayList<String> answer = new ArrayList<String>();
+		ArrayList<String> answer = new ArrayList<>();
 		int cnt = 1;
 		int num = 0;
 
@@ -95,7 +89,7 @@ public class Test1 {
 			} else {
 
 				if (cnt == 1) {
-				
+
 					answer.add(logs[num]);
 					num = j;
 					break;

@@ -1,7 +1,6 @@
 package codingTest_Fasoo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 ////char 사용시 유의
@@ -72,22 +71,22 @@ public class Test2 {
 
 		int[] arr = new int[balloons.length];
 		int cnt = 0;
-		for (int i = 0; i < balloons.length; i++) {
+		for (int[] balloon : balloons) {
 
-			if (balloons[i][0] < 0 && balloons[i][1] > 0) {// -+
+			if (balloon[0] < 0 && balloon[1] > 0) {// -+
 
-				list2.add(balloons[i][1] / balloons[i][0]);
+				list2.add(balloon[1] / balloon[0]);
 
-			} else if (balloons[i][0] < 0 && balloons[i][1] < 0) {// --
+			} else if (balloon[0] < 0 && balloon[1] < 0) {// --
 
-				list3.add(balloons[i][1] / balloons[i][0]);
+				list3.add(balloon[1] / balloon[0]);
 			}
-			if (balloons[i][0] > 0 && balloons[i][1] < 0) {
+			if (balloon[0] > 0 && balloon[1] < 0) {
 
-				list4.add(balloons[i][1] / balloons[i][0]);
+				list4.add(balloon[1] / balloon[0]);
 			} else {
 
-				list1.add(balloons[i][1] / balloons[i][0]);
+				list1.add(balloon[1] / balloon[0]);
 			}
 		}
 		Collections.sort(list1);
@@ -137,16 +136,16 @@ public class Test2 {
 						answer -= 1;
 						list3.remove(list3.get(i));
 						list3.remove(list3.get(j));
-					} 
+					}
 					if(list3.size()<2) {
 						break;
 					}
-					
+
 				}
 				if(list3.size()<2) {
 					break;
 				}
-				
+
 			}
 		}
 		if (list4.size() > 1) {
@@ -156,8 +155,8 @@ public class Test2 {
 						answer -= 1;
 						list4.remove(list4.get(i));
 						list4.remove(list4.get(j));
-						
-					} 
+
+					}
 					if(list4.size()<2) {
 						break;
 					}
@@ -165,7 +164,7 @@ public class Test2 {
 				if(list4.size()<2) {
 					break;
 				}
-				
+
 			}
 		}
 

@@ -1,11 +1,5 @@
 package Tets9_SKC;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 //order by sum(salary) desc
 
 //SELECT distinct experience exp, count(experience) count from assessments group by exp;
@@ -42,15 +36,15 @@ class T4 {
 
 	public static int solution(int[] l, int[] ll) {
 		int answer = -1;
-		
+
 		for(int i=0; i<l.length;i++) {
 			System.out.println(l[i]+":"+l[ll[i]-1]);
 			if(l[i] != l[ll[i]-1]) {
 				answer++;
 			}
 		}
-		
-		
+
+
 
 		return answer;
 	}

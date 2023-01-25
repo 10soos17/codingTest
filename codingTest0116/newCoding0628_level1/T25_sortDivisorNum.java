@@ -1,7 +1,6 @@
 package newCoding0628_level1;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 class T25_sortDivisorNum {
 //	array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환
@@ -28,9 +27,9 @@ class T25_sortDivisorNum {
 
 		   int[] a = new int[n.length];
 			int cnt = 0;
-			for (int i = 0; i < n.length; i++) {
-				if (n[i] % m == 0) {
-					a[cnt] = n[i];
+			for (int element : n) {
+				if (element % m == 0) {
+					a[cnt] = element;
 					cnt++;
 				}
 			}
@@ -41,7 +40,7 @@ class T25_sortDivisorNum {
 				answer[i] = a[i];
 			}
 			Arrays.sort(answer);
-	        
+
 	        return answer;
 	}
 

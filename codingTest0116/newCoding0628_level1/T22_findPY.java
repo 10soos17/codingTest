@@ -1,11 +1,11 @@
 package newCoding0628_level1;
 
 class T22_findPY {
-//	대문자와 소문자가 섞여있는 문자열 s가 주어집니다. 
-//	s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True, 다르면 False를 return 
+//	대문자와 소문자가 섞여있는 문자열 s가 주어집니다.
+//	s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True, 다르면 False를 return
 //	s	answer
 //	"pPoooyY"	true
-//	"Pyy"	false	
+//	"Pyy"	false
 	public static void main(String[] args) {
 
 		String n = "pPoooY";
@@ -27,9 +27,9 @@ class T22_findPY {
     			sum++;
     		}else if(lower.equals("y")) {
     			sum--;
-    		}	
+    		}
     	}
-    	if(sum !=0 ) return false;;
+    	if(sum !=0 ) return false;
 
     	return true;
 	}

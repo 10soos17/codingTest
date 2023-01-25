@@ -2,11 +2,7 @@ package coding_naver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 ////char 사용시 유의
 //(char)(‘0’+val);
@@ -63,7 +59,7 @@ public class Test3 {
 	static int end;
 	public static void main(String[] args) {
 /*
- * 
+ *
 7 12 2
 
 7 2
@@ -85,7 +81,7 @@ public class Test3 {
 		gp = 7;
 		start = 6;
 		end = 3;
-		
+
 		int[][] arr = {
 				{7, 2},
 				{5, 4},
@@ -102,62 +98,62 @@ public class Test3 {
 
 		putPath(arr);
 		//solution();
-		
-		
-		
+
+
+
 
 	}
-	
-	//정점별 간선, 가중치 자료구조 
+
+	//정점별 간선, 가중치 자료구조
 		//map의 key = 정점
-		//map의 value = ArrayList<ArrayList<Integer>>로 간선별 저장 
+		//map의 value = ArrayList<ArrayList<Integer>>로 간선별 저장
 		public static HashMap<Integer, ArrayList<ArrayList<Integer>>> putPath(int [][] arr){
-			HashMap<Integer, ArrayList<ArrayList<Integer>>> edge = new HashMap<Integer, ArrayList<ArrayList<Integer>>>();
-			ArrayList<ArrayList<Integer>> mList = new ArrayList<ArrayList<Integer>>();
-			ArrayList<Integer> lList = new ArrayList<Integer>();
-			
+			HashMap<Integer, ArrayList<ArrayList<Integer>>> edge = new HashMap<>();
+			ArrayList<ArrayList<Integer>> mList = new ArrayList<>();
+			ArrayList<Integer> lList = new ArrayList<>();
+
 			lList.add(0);
 			lList.add(0);
 			mList.add(lList);
 			edge.put(0, mList);
 
-			
-			for(int i=0;i<arr.length;i++) {
-				int p = arr[i][0];
-				int p2 = arr[i][1];
+
+			for (int[] element : arr) {
+				int p = element[0];
+				int p2 = element[1];
 				//int w = arr[i][2];
-				
+
 				if (edge.get(p) != null) {
 					mList = edge.get(p);
 				} else {
-					mList = new ArrayList<ArrayList<Integer>>();
+					mList = new ArrayList<>();
 				}
-				lList = new ArrayList<Integer>();
+				lList = new ArrayList<>();
 				lList.add(p2);
 				//lList.add(w);
 				mList.add(lList);
 				edge.put(p, mList);
-				
+
 			}
 
 
 			for (int l : edge.keySet()) {
 				System.out.println(l+":"+edge.get(l));
 			}
-			
+
 			return edge;
-			
+
 		}
-		
+
 
 	public static void solution() {
-		
+
 		int []answer = {0};
-			
+
 		System.out.println(Arrays.toString(answer));
-		
-		
-		
+
+
+
 	}
 
 }

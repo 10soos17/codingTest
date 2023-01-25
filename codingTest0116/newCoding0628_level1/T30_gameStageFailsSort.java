@@ -25,7 +25,7 @@ public class T30_gameStageFailsSort {
 
 	// 실패율 내림차순
 	// 실패율 같으면 스테이지번호 오름차순
-	static Comparator<Fail> comp = new Comparator<Fail>() {
+	static Comparator<Fail> comp = new Comparator<>() {
 
 		@Override
 		public int compare(Fail a, Fail b) {
@@ -81,7 +81,7 @@ public class T30_gameStageFailsSort {
 			cnt += 1;
 		}
 		Collections.sort(fails,comp);
-		
+
 		for(int i=0;i<n;i++) {
 			answer[i] = fails.get(i).stage;
 			System.out.println(answer[i]);

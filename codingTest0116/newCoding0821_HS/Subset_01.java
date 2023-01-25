@@ -7,31 +7,31 @@ public class Subset_01 {
 	static boolean[] visited;
 	static int len=arr.length;
 	static int answer = 0;
-	
-	
+
+
 	static void subset(int dep, int sum) {
-		
+
 		if(dep==len) {
 			if(sum==target) {
 				answer++;
 			}
 			return;
 		}
-		
-		
+
+
 		subset(dep+1,sum+arr[dep]);
 		subset(dep+1,sum-arr[dep]);
-		
+
 	}
-	
-	
+
+
 
 	public static void main(String[] args) {
-		
+
 	//	visited = new boolean[len];
-		
+
 		subset(0,0);
-		
+
 		System.out.println(answer);
 
 	}

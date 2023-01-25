@@ -1,11 +1,10 @@
 package coding_AlgoBasic;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 //https://www.youtube.com/watch?v=S9eQ6DIBPqg&list=PLDV-cCQnUlIYFOXYzqLoXnEye4WxDa_30&index=9
 //시간복잡도: o(n^2) or 정렬(o(n)) 후 병합 경우는: (o(n*logn) -> o(n*logn)
-//공간복잡도: 
+//공간복잡도:
 public class Array5_MergeIntervals {
 
 	public static void main(String[] args) {
@@ -24,9 +23,9 @@ public class Array5_MergeIntervals {
 	//
 	public static void solution(ArrayList<Integer> num, int[][] nums) {
 
-		for (int i = 0; i < nums.length; i++) {
+		for (int[] num2 : nums) {
 
-			merge(num, nums[i]);
+			merge(num, num2);
 
 		}
 
@@ -67,8 +66,8 @@ public class Array5_MergeIntervals {
 			idx2--;
 		}
 
-		for (int i = 0; i < nums1.size(); i++) {
-			System.out.println(nums1.get(i));
+		for (Integer element : nums1) {
+			System.out.println(element);
 		}
 
 		System.out.println(" ");

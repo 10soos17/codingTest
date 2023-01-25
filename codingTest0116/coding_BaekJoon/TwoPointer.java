@@ -1,7 +1,5 @@
 package coding_BaekJoon;
 
-import java.util.ArrayList;
-
 //https://www.youtube.com/watch?v=U0TXIFiCIu0&list=PLi-xJrVzQaxUVf9DWyUdEzhJB0dGvvgrk&index=7
 //https://www.acmicpc.net/problem/2559
 

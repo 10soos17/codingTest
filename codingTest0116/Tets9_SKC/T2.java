@@ -39,7 +39,7 @@ class T2 {
 		boolean[] b = { true, false, true };
 
 		solution(k, kk);
-		
+
 		for(int i : tmp) {
 			System.out.println(i);
 		}

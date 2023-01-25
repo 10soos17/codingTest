@@ -5,7 +5,7 @@ class T7_GCDandLCM {
 //	두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환
 //	 n	m	return
 //	 3	12	[3, 12]
-//	 2	5	[1, 10]	 
+//	 2	5	[1, 10]
 	public static void main(String[] args) {
 		int n =2;
 		int m = 5;
@@ -17,9 +17,9 @@ class T7_GCDandLCM {
 
 	public static int[] solution(int n, int m) {
 		int[] answer=new int[2];
-		
+
 		int min = Math.min(n, m);
-		
+
 		while(min>0) {
 			if(n%min==0 && m%min == 0) {
 				answer[0]=min;

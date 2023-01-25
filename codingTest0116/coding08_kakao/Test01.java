@@ -75,28 +75,28 @@ public class Test01 {
 		String mailName = "";
 
 		String[] list = names.split(", ");// 원래이름 리스트
-		ArrayList<String> resList = new ArrayList<String>();// 최종 메일 저장 리스트
-		ArrayList<String> mailNameList = new ArrayList<String>();// 메일에 사용할 이름 리스트
+		ArrayList<String> resList = new ArrayList<>();// 최종 메일 저장 리스트
+		ArrayList<String> mailNameList = new ArrayList<>();// 메일에 사용할 이름 리스트
 
-		for (int i = 0; i < list.length; i++) {
+		for (String element : list) {
 
 
-			String[] separateList = list[i].toLowerCase().split(" ");//이름 공백으로 2, 3부분
+			String[] separateList = element.toLowerCase().split(" ");//이름 공백으로 2, 3부분
 			String[] lastNameList = separateList[separateList.length-1].split("-");
 			String lastName = "";
 
-			if (lastNameList.length == 2) { //"-" 있을 경우 
+			if (lastNameList.length == 2) { //"-" 있을 경우
 				lastName = lastNameList[0] + lastNameList[1];
-				if (lastName.length() > 9) {//마지막 이름 길이 8자로 줄이기 
+				if (lastName.length() > 9) {//마지막 이름 길이 8자로 줄이기
 					lastName = lastName.substring(0, 8);
 				}
 				mailName += separateList[0].charAt(0);
 				mailName += separateList[1].charAt(0);
 				mailName += lastName;
 
-			} else { //"-" 없을 경우 
+			} else { //"-" 없을 경우
 				lastName = lastNameList[0];
-				if (lastName.length() > 9) {//마지막 이름 길이 8자로 줄이기 
+				if (lastName.length() > 9) {//마지막 이름 길이 8자로 줄이기
 					lastName = lastName.substring(0, 8);
 				}
 				mailName += separateList[0].charAt(0);
@@ -107,7 +107,7 @@ public class Test01 {
 			mailNameList.add(mailName);
 
 			if (count > 1) {
-				mail += list[i]+" <"+ mailName+count+"@"+company.toLowerCase()+".com>";
+				mail += element+" <"+ mailName+count+"@"+company.toLowerCase()+".com>";
 				resList.add(mail);
 //        		System.out.println("numbering");
 //        		System.out.println("mail:"+mail);
@@ -118,16 +118,16 @@ public class Test01 {
 				String[] tmpList = tmp.split("@");
 				mail+=tmpList[0]+1+"@"+tmpList[1];
 				resList.set(idx, mail);
-				
+
 //        		System.out.println("change first");
 //        		System.out.println("mail:"+mail);
 			} else {
-				mail += list[i]+" <"+ mailName+"@"+company.toLowerCase()+".com>";
+				mail += element+" <"+ mailName+"@"+company.toLowerCase()+".com>";
 //        		System.out.println("add");
 //        		System.out.println("mail:"+mail);
 				resList.add(mail);
 			}
-		
+
 			mail = "";
 			mailName = "";
 		}

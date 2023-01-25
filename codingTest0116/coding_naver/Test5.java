@@ -2,11 +2,7 @@ package coding_naver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 ////char 사용시 유의
 //(char)(‘0’+val);
@@ -62,7 +58,7 @@ public class Test5 {
 		ArrayList<String> list = new ArrayList<>();
 		HashMap<String, Integer> map = new HashMap<>();
 
-		
+
 		int[] arr = {};
 
 		solution();
@@ -70,13 +66,13 @@ public class Test5 {
 	}
 
 	public static void solution() {
-		
+
 		int []answer = {0};
-			
+
 		System.out.println(Arrays.toString(answer));
-		
-		
-		
+
+
+
 	}
 
 }

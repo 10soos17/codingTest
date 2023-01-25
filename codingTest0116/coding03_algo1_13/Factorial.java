@@ -1,8 +1,6 @@
 package coding03_algo1_13;
 
-import java.util.Scanner;
-
-//팩토리얼 계산 
+//팩토리얼 계산
 //https://www.youtube.com/watch?v=7wIUlCM8v9k&list=PLVoihNyHW4xkm_KJ8_N8X7F6EQP4uSRyR&index=9
 public class Factorial {
 
@@ -11,18 +9,18 @@ public class Factorial {
 //		//1.
 //		int num = 5;
 //		int result = num;
-//		
+//
 //		for(int i = num-1; i>1; i--) {
 //			result *= i;
 //		}
-//		
+//
 //		System.out.println(result);
 
 //		//2. Scanner 입력값 받기 + recursion
 //		Scanner sc = new Scanner(System.in);
 //		int n = 0;
 //		boolean flag = true;
-//		
+//
 //		while(flag) {
 //			try {
 //				System.out.println("input:");
@@ -32,14 +30,14 @@ public class Factorial {
 //			}catch(Exception e) {
 //				System.out.println("not a number.");
 //				sc.next();
-//				
+//
 //			}
 //		}
 //		int facto = getFactorial(n);
 //		System.out.println("factorial: "+ facto);
-//		
+//
 ////		int facto = n;
-////		
+////
 ////		for(int i=n-1;i>1;i--) {
 ////			facto *= i;
 ////		}

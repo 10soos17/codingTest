@@ -1,8 +1,6 @@
 package coding_AlgoBasic;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 public class Sorting1_Algotithm {
 
@@ -11,21 +9,21 @@ public class Sorting1_Algotithm {
 		int[] arr = { 10, 1, 13, 3, 9, 5, 7 };
 
 		bubbleSorting(arr);
-		
+
 		int[] arr1 = { 10, 1, 13, 3, 9, 5, 7 };
 		InsertionSorting(arr1);
-		
+
 		int[] arr2 = { 10, 1, 13, 3, 9, 5, 7 };
 		SelectionSorting(arr2);
-		
+
 		int[] arr3 = { 10, 1, 13, 3, 9, 5, 7 };
 		MergeSorting(arr3);
-		
+
 		int[] arr4 = { 10, 1, 13, 3, 9, 5, 7 };
 		int start = 0;
 		int end = arr.length-1;
 		QuickSorting(arr4 ,start,end);
-		
+
 		int[] arr5 = { 10, 1, 13, 3, 9, 5, 7 };
 		CountingSorting(arr5);
 
@@ -115,7 +113,7 @@ public class Sorting1_Algotithm {
 		}
 
 //			leftNums = MergeSorting(leftNums);
-//			rightNums = MergeSorting(rightNums);	
+//			rightNums = MergeSorting(rightNums);
 //			System.out.println(leftNums.length+":"+leftNums[0]+","+leftNums[leftNums.length-1]);
 //			System.out.println(rightNums.length+":"+rightNums[0]+","+rightNums[rightNums.length-1]);
 
@@ -168,7 +166,7 @@ public class Sorting1_Algotithm {
 	public static void QuickSorting(int[] nums, int start, int end) {
 		n+=1;
 		System.out.println(n+"th");
-		//10, 1, 13, 3, 9, 5, 7 
+		//10, 1, 13, 3, 9, 5, 7
 		if(start>end) {
 			return;
 		}
@@ -176,9 +174,9 @@ public class Sorting1_Algotithm {
 		int pivot = nums[mid];
 		int i=start;
 		int j=end;
-		
+
 		System.out.println("mid:"+ mid+", pivot:"+pivot);
-		
+
 		while(i<=j) {
 			while(nums[i]<pivot) {
 				System.out.println("1: "+i);
@@ -197,7 +195,7 @@ public class Sorting1_Algotithm {
 				j--;
 			}
 			System.out.println("after: "+Arrays.toString(nums));
-			
+
 		}
 		if(start<j) {
 			System.out.println("\n1 recur:j:"+j);
@@ -215,7 +213,7 @@ public class Sorting1_Algotithm {
 				System.out.print(num + " ");
 			}
 		}
-		
+
 //		System.out.println("\nQuickSorting: ");
 //		for(int num :nums) {
 //			System.out.print(num + " ");
@@ -239,9 +237,9 @@ public class Sorting1_Algotithm {
 	public static void CountingSorting(int[] nums) {
 
 		int maxNum = 0;
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] > maxNum) {
-				maxNum = nums[i];
+		for (int num : nums) {
+			if (num > maxNum) {
+				maxNum = num;
 			}
 		}
 		maxNum += 1;
@@ -276,9 +274,9 @@ public class Sorting1_Algotithm {
 	public static void RadixSorting(int[] nums) {
 
 		int maxNum = 0;
-		for (int i = 0; i < nums.length; i++) {
+		for (int num : nums) {
 			int sum = 0;
-			int tmp = nums[i];
+			int tmp = num;
 			while (tmp > 0) {
 				tmp /= 10;
 				sum += 1;
@@ -305,8 +303,8 @@ public class Sorting1_Algotithm {
 		int count[] = new int[10];
 		int multi = (int) Math.pow(10, maxNum);
 
-		for (int i = 0; i < nums.length; i++) {
-			int idx = (nums[i] / multi) % 10;
+		for (int num : nums) {
+			int idx = (num / multi) % 10;
 			// System.out.println(idx);
 			count[idx]++;
 		}
@@ -323,7 +321,7 @@ public class Sorting1_Algotithm {
 
 		// 배열 값 뒤부터
 		for (int i = nums.length - 1; i >= 0; i--) {
-			int idx = (int) (nums[i] / multi) % 10;
+			int idx = nums[i] / multi % 10;
 			int tmp = set_idx[idx];
 			sorted[tmp] = nums[i];
 			set_idx[idx] -= 1;

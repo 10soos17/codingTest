@@ -1,7 +1,5 @@
 package newCoding0523;
 
-import java.util.Arrays;
-
 //수의 최대공약수와 최소공배수를 반환하는 함수
 //n	m	return
 //3	12	[3, 12]
@@ -26,7 +24,7 @@ public class T19_LCMandGCD {
 		while (min > 0) {
 			if (n % min == 0 && m % min == 0) {
 				answer[0] = min;
-				
+
 				if (min != 1) {
 					answer[1] = n * m / min;
 					break;

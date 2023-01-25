@@ -64,9 +64,9 @@ class T1 {
 			if (!m.group(0).isEmpty()) {
 				tmp = Integer.parseInt(m.group(0));
 			}
-			
+
 			System.out.println(key+":"+tmp);
-			
+
 			if(map.containsKey(key)) {
 				int[] nums = new int[map.get(key).length + 1];
 
@@ -75,17 +75,17 @@ class T1 {
 				}
 				nums[map.get(key).length] = tmp;
 				map.put(key, nums);
-				
+
 			} else {
 				map.put(key, new int[] {tmp});
 			}
 
 		}
-		
+
 	for(String s:map.keySet()) {
 		System.out.println(map.get(s).length);
 		System.out.println(Arrays.toString(map.get(s)));
-		
+
 	}
 
 		String reg = "^[a-z]{3,6}";

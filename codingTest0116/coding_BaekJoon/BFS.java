@@ -10,17 +10,17 @@ public class BFS {
 	static int n;
 
 	public static void main(String[] args) {
-		
+
 		n = 6;//세로크기 = row = y
 		m = 5;//가로크기 = col = x
 
-		int[][] list = { 
-				{ 1, 1, 0, 1, 1 }, 
-				{ 0, 1, 1, 0, 0 }, 
-				{ 0, 0, 0, 0, 0 }, 
-				{ 1, 0, 1, 1, 1 }, 
+		int[][] list = {
+				{ 1, 1, 0, 1, 1 },
+				{ 0, 1, 1, 0, 0 },
+				{ 0, 0, 0, 0, 0 },
+				{ 1, 0, 1, 1, 1 },
 				{ 0, 0, 1, 1, 1 },
-				{ 0, 0, 1, 1, 1 } 
+				{ 0, 0, 1, 1, 1 }
 				};
 		solution(n,m, list);
 
@@ -33,8 +33,8 @@ public class BFS {
 		int[] dy = { 0, 1, 0, -1 }; // 오른쪽,아래쪽,왼쪽, 위쪽
 		int[] dx = { 1, 0, -1, 0 };
 
-		Queue<ArrayList<Integer>> q = new LinkedList<ArrayList<Integer>>();
-		ArrayList<Integer> e = new ArrayList<Integer>();
+		Queue<ArrayList<Integer>> q = new LinkedList<>();
+		ArrayList<Integer> e = new ArrayList<>();
 
 		e.add(y);
 		e.add(x);
@@ -46,7 +46,7 @@ public class BFS {
 				ny = e.get(0) + dy[i];
 				nx = e.get(1) + dx[i];
 				if (0 <= ny && ny < n && 0 <= nx && nx < m) {
-					if (list[ny][nx] == 1 && check[ny][nx] == false) {
+					if (list[ny][nx] == 1 && !check[ny][nx]) {
 						rs += 1;
 						check[ny][nx] = true;
 
@@ -69,7 +69,7 @@ public class BFS {
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
-				if (list[i][j] == 1 && check[i][j] == false) {
+				if (list[i][j] == 1 && !check[i][j]) {
 					check[i][j] = true;
 					cnt += 1;
 					max = Math.max(max, bfs(j, i, list, check));

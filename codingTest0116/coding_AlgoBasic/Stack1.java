@@ -12,19 +12,19 @@ public class Stack1 {
 		String[] arr = {"(){}[]", "{([])}", "({)(})"};
 		int target = 16;
 		solution(arr);
-		
+
 	}
 
-	
+
 	public static void solution(String[] arr) {
-		
+
 		boolean answer[] = new boolean[arr.length];
 
 		Stack<String> stack = new Stack<>();
-		
+
 		for(int i=0;i<arr.length;i++) {
 			String[] list = arr[i].split("");
-			
+
 			for(String s: list) {
 				if(s.equals("(") || s.equals("{") || s.equals("[") ) {
 					stack.push(s);
@@ -36,7 +36,7 @@ public class Stack1 {
 						break;
 					}
 				}
-				
+
 			}
 			if(stack.size() == 0) {
 				answer[i] = true;
@@ -44,11 +44,11 @@ public class Stack1 {
 				answer[i] = false;
 			}
 		}
-		
+
 		System.out.println(Arrays.toString(answer));
 	}
 	public static String isValid(String s) {
-		
+
 		String str="";
 		if(s.equals(")")) {
 			str="(";

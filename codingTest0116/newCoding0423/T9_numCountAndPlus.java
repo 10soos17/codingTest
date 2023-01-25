@@ -15,7 +15,7 @@ class T9_numCountAndPlus {
 //	17	1, 17	2
 //	==========
 //	13 + 14 + 15 - 16 + 17 = 43을 return 해야 합니다.
-	
+
 	public static void main(String[] args) {
 		int left=13;
 		int right=17;
@@ -24,9 +24,9 @@ class T9_numCountAndPlus {
 	}
 
 	public static int solution(int left, int right) {
-		
+
 		int answer=0;
-		
+
 		while(left<=right) {
 			System.out.println(left+":loop");
 			if(check(left)) {
@@ -37,10 +37,10 @@ class T9_numCountAndPlus {
 			answer-=left;
 			left++;
 		}
-		
+
 		return answer;
 	}
-	
+
 	public static boolean check(int num) {
 		if(num%Math.sqrt(num)==0) {
 			System.out.println(num);

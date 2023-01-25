@@ -1,8 +1,6 @@
 package codingTest_pro;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,8 +55,8 @@ import java.util.regex.Pattern;
 public class Test1 {
 	static int check;
 	public static void main(String[] args) {
-		
-		
+
+
 		/*
 		 * 문제 설명
 A카드사 홈페이지에 가입된 아이디들은 다음과 같은 형태를 갖추고 있습니다.
@@ -139,10 +137,10 @@ registered_list에 new_id("apple")가 포함되지 않았으므로, "apple"가 �
 
 	public static String solution(String[] rList, String new_id) {
 		String answer = new_id;
-		
+
 		ArrayList<String> l = new ArrayList<>();
-		for(int i=0;i<rList.length;i++) {
-			l.add(rList[i]);
+		for (String element : rList) {
+			l.add(element);
 		}
 		check= l.indexOf(answer);
 		while(check != -1) {
@@ -150,25 +148,25 @@ registered_list에 new_id("apple")가 포함되지 않았으므로, "apple"가 �
 					Pattern p = Pattern.compile(reg);
 					Matcher m =p.matcher(answer);
 					m.find();
-					
+
 					System.out.println("test");
 					System.out.println("1"+m.group(0));
-					
+
 					String tmp = m.group(0);
-					
+
 					reg = "^[a-z]{3,6}";
 					p = Pattern.compile(reg);
 					m =p.matcher(answer);
 					m.find();
 					System.out.println("2"+m.group(0));
-					
+
 					int n=0;
 					if(tmp =="") {
 						n=1;
 					}else {
 						n = Integer.parseInt(tmp)+1;
 					}
-					
+
 					l.remove(answer);
 					answer=m.group(0)+n;
 					check = l.indexOf(answer);
@@ -177,5 +175,5 @@ registered_list에 new_id("apple")가 포함되지 않았으므로, "apple"가 �
 		System.out.println(answer);
 		return answer;
 	}
-	
+
 }

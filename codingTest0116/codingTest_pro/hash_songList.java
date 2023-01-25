@@ -1,40 +1,33 @@
 package codingTest_pro;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class hash_songList {
 
 	public static void main(String[] args) {
-		//["classic", "pop", "classic", "classic", "pop"]	
-		//[500, 600, 150, 800, 2500]	
+		//["classic", "pop", "classic", "classic", "pop"]
+		//[500, 600, 150, 800, 2500]
 		//[4, 1, 3, 0]
 		String [] arr1 = {"classic", "pop", "classic", "classic", "pop"};
 		int [] arr2 = {500, 600, 150, 800, 2500};
-		
+
 		solution(arr1, arr2);
-		
+
 	}
 
 	public static ArrayList<Integer> solution(String[] genres, int[] plays) {
         ArrayList<Integer> answer = new ArrayList<>();
-        
+
         HashMap<String, Integer> map = new HashMap<>();
         ArrayList<Integer> nPlayer = new ArrayList<>();
-        
-        for(int i=0;i<plays.length;i++) {
-        	nPlayer.add(plays[i]);
+
+        for (int play : plays) {
+        	nPlayer.add(play);
         }
-     
+
         for(int i=0;i<genres.length;i++) {
         	int n=0;
         	if(map.containsKey(genres[i])) {
@@ -45,18 +38,18 @@ public class hash_songList {
         	}
         	map.put(genres[i], n);
         }
-        
+
         List<String> list = new ArrayList<>(map.keySet());
 
-        
+
 //        System.out.println(list.size());
 //        for(String s:list) {
 //        	System.out.println(s);
 //        }
-        
-        
+
+
         for(String s:list) {
-        	ArrayList<Integer> tmp = new ArrayList<Integer>();
+        	ArrayList<Integer> tmp = new ArrayList<>();
         	for(int i=0;i<genres.length;i++) {
         		if(s.equals(genres[i])) {
         			tmp.add(plays[i]);
@@ -64,22 +57,22 @@ public class hash_songList {
         		}
         	}
         	Collections.sort(tmp, (a,b)->b.compareTo(a));
-        	
-        	
+
+
         	for(int j=0;j<2;j++) {
         		System.out.println(tmp.get(j));
         		int idx = nPlayer.indexOf(tmp.get(j));
         		answer.add(idx);
-        		
+
         	}
         }
 //        for(int i=0;i<answer.size();i++) {
 //        	System.out.println(answer.get(i));
 //        }
-        
-        
-       
-        
+
+
+
+
         return answer;
     }
 }

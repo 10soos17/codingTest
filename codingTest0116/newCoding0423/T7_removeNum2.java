@@ -3,7 +3,6 @@ package newCoding0423;
 //프로그래머스 다른 풀이법들
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 class T7_removeNum2 {
@@ -27,7 +26,7 @@ class T7_removeNum2 {
 	}
 
 	public static int[] solution(int []arr) {
-	     List<Integer> list = new ArrayList<Integer>();
+	     List<Integer> list = new ArrayList<>();
 	     list.add(arr[0]);
 
 	        for (int i = 1; i < arr.length; i++) {
@@ -45,13 +44,13 @@ class T7_removeNum2 {
 
 	}
 	public static int[] solution2(int []arr) {
-        ArrayList<Integer> tempList = new ArrayList<Integer>();
+        ArrayList<Integer> tempList = new ArrayList<>();
         int preNum = 10;
         for(int num : arr) {
             if(preNum != num)
                 tempList.add(num);
             preNum = num;
-        }       
+        }
         int[] answer = new int[tempList.size()];
         for(int i=0; i<answer.length; i++) {
             answer[i] = tempList.get(i).intValue();
@@ -59,6 +58,6 @@ class T7_removeNum2 {
         }
         return answer;
 	}
-	
+
 
 }

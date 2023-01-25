@@ -1,8 +1,6 @@
 package coding_BaekJoon;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 
 //https://www.youtube.com/watch?v=D1ad7UCbWHY&list=PLi-xJrVzQaxUVf9DWyUdEzhJB0dGvvgrk&index=9
 //https://www.acmicpc.net/problem/11047
@@ -42,9 +40,9 @@ public class Greedy {
 		for (int i = arr.length-1; i >= 0; i--) {
 			cnt += m / arr[i];
 			m %= arr[i];
-			
+
 		}
-		
+
 		System.out.println(cnt);
 
 	}

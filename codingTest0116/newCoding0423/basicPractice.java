@@ -8,19 +8,19 @@ public class basicPractice {
 		int res = solution(n);
 
 		System.out.println(res);
-		
+
 	}
 
 	public static int solution(int n) {
 		int answer = 0;
 
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 		return answer;
 	}
 

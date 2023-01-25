@@ -20,7 +20,7 @@ class T4_hidePhoneNumber {
 //		answer = s.substring(0, s.length() - 4).replaceAll(".", "*");
 //		answer += s.substring(s.length() - 4, s.length());
 
-//2번		
+//2번
 		answer = s.replaceAll(".(?=.{4})", "*");
 
 		return answer;

@@ -1,8 +1,6 @@
 package codingTest_pro;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class greedy_borrowClothes {
 
@@ -19,22 +17,22 @@ public class greedy_borrowClothes {
 	}
 
 	public static int solution(int n, int[] lost, int[] reserve) {
-		
+
 		int m = n;
 		m -= lost.length;
 		int idx=0;
 		int idx2=0;
-		
+
 
 		Arrays.sort(lost);
 		Arrays.sort(reserve);
-		
-		
+
+
 		for (int i = idx; i < reserve.length; i++) {
 
 			for (int j = idx2; j < lost.length; j++) {
-				
-				
+
+
 				if(reserve[i] == lost[j]) {
 					idx=i+1;
 					//idx2 = j+1;
@@ -44,17 +42,17 @@ public class greedy_borrowClothes {
 					idx+=1;
 					idx2 = j+1;
 					break;
-					
+
 				}else if(Math.abs(lost[j] - reserve[i]) > 1) {
 					if(reserve[i]> lost[j]) {
 						idx=i+1;
-						
+
 					}else {
 						idx2+=1;
 						break;
 					}
 				}
-				
+
 
 			}
 

@@ -10,9 +10,9 @@ import java.util.ArrayList;
  * while문으로 특정조건 종료될 때까지 반복
  * 4방향을 for문으로 탐색
  * 더이상 탐색 불가능할 경우, 뒤로 한칸 후진
- * 후진이 불가능하면 종료 
+ * 후진이 불가능하면 종료
  * 3 3
- * 
+ *
 1 1 0
 
 1 1 1
@@ -66,7 +66,7 @@ public class Simulation {
 
 					}
 					// 4방향 모두 있지 않은 경우
-					if (sw == false) {
+					if (!sw) {
 						// 뒤쪽 방향이 막혀있는 지 확인
 						ny = y - dy[d];
 						nx = x - dx[d];
@@ -88,5 +88,5 @@ public class Simulation {
 
 	}
 
-	
+
 }

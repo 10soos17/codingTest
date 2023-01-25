@@ -23,8 +23,8 @@ class T26_chaneNumberToArithmathic {
 
 		String  answer = n.substring(0, n.length()-4).replaceAll("[0-9]","*");
 		answer+=n.substring(n.length()-4,n.length());
-		
+
 		return answer;
-		
+
 	}
 }

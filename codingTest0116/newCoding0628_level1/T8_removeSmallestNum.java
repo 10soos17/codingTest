@@ -18,21 +18,21 @@ class T8_removeSmallestNum {
 	}
 
 	public static int[] solution(int[] n) {
-		
+
 		if(n.length==1) return new int[] {-1};
-		
+
 		int[] answer=new int[n.length-1];
 		int[] c = n.clone();
 		Arrays.sort(c);
 		int min = c[0];
 		int cnt=0;
-		
-		for(int i=0;i<n.length;i++) {
-			if(n[i]==min)continue;
-			answer[cnt]=n[i];
+
+		for (int element : n) {
+			if(element==min)continue;
+			answer[cnt]=element;
 			cnt++;
 		}
-		
+
 		return answer;
 	}
 }

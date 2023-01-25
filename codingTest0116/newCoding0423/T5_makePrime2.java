@@ -6,9 +6,9 @@ class T5_makePrime2 {
 	static int res;
 
 	public static void main(String[] args) {
-		
+
 		res = 0;
-		
+
 		if (3 > nums.length || nums.length > 50) {
 			System.out.println(res);
 		}
@@ -19,7 +19,7 @@ class T5_makePrime2 {
 	}
 
 	public static int solution() {
-		
+
 		for (int i = 0; i < nums.length; i++) {
 			for (int j = i + 1; j < nums.length; j++) {
 				for (int k = j + 1; k < nums.length; k++) {
@@ -36,7 +36,7 @@ class T5_makePrime2 {
 		if (num % 2 == 0)
 			return false;
 
-		for (int i = 2; i < (int) num / 2; i++) {
+		for (int i = 2; i < num / 2; i++) {
 			if (num % i == 0)
 				return false;
 		}

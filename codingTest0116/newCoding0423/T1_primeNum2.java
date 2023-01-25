@@ -1,7 +1,5 @@
 package newCoding0423;
 
-import java.util.ArrayList;
-
 //437674	3	3
 //110011	10	2
 //1 ≤ n ≤ 1,000,000
@@ -14,7 +12,7 @@ public class T1_primeNum2 {
        System.out.print(res+" ");
 
 	}
-	
+
     public static int solution(int n, int k) {
         int answer = 0;
         String s = "";
@@ -28,7 +26,7 @@ public class T1_primeNum2 {
 
         return answer;
     }
-    
+
     public static int check(String number) {
     	int answer=0;
     	String s="";
@@ -36,7 +34,7 @@ public class T1_primeNum2 {
     	for(int i=list.length-1;i>=0;i--) {
     		s+=list[i];
     	}
-    	
+
     	String[] nums = s.split("0");
     	for(String i : nums) {
     		if(i.equals("")) continue;
@@ -46,7 +44,7 @@ public class T1_primeNum2 {
     	}
     	return answer;
     }
-    
+
     public static Boolean primeCheck(int num) {
     	if(num == 1)return false;
     	if(num == 2)return true;

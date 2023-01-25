@@ -24,7 +24,7 @@ public class T3_greedy_BJ11501 {
 		int sum=0;
 		int maxIdx=0;
 		int maxVal=0;
-		
+
 		StringTokenizer st = null;
 		for(int i=0;i<CNT;i++) {
 			st = new StringTokenizer(br.readLine()," ");
@@ -34,17 +34,17 @@ public class T3_greedy_BJ11501 {
 				maxVal = map[i][1];
 			}
 		}
-		
+
 		int beforeIdx=0;
 		Arrays.sort(map, (o1,o2)-> o1[0]-o2[0]);
-		
+
 		for(int i=0;i<map.length;i++) {
 			if(maxVal==map[i][1]) {
-				maxIdx=i; 
+				maxIdx=i;
 				break;
 			}
 		}
-		
+
 		for(int i=1;i<=maxIdx;i++) {
 //			System.out.println(i);
 			if(map[beforeIdx][1] <= map[i][1]) {
@@ -54,7 +54,7 @@ public class T3_greedy_BJ11501 {
 			}
 		}
 		beforeIdx=map.length-1;
-		
+
 		for(int i=map.length-1;i>maxIdx;i--) {
 //			System.out.println("max"+i);
 			if(map[i-1][1] >= map[beforeIdx][1]) {

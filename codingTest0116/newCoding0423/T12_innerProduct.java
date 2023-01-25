@@ -24,7 +24,7 @@ class T12_innerProduct {
 			t += a % 3;
 			a = a / 3;
 		}
-		
+
 //		while(a>=3) {
 //			t+=a%3;
 //			a/=3;

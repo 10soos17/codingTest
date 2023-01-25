@@ -1,28 +1,26 @@
 package coding08_kakao;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 public class One2 {
 
 	public static void main(String[] args) {
-		
+
 		int[] A = new int[]{-1,-3, 5, 3}; //1
-		
+
 		solution(A);
 
 	}
-	
+
     public static int solution(int[] A) {
         // write your code in Java SE 8
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         int res=0;
-       
-        
+
+
         Collections.sort(list);
-        
+
         //System.out.println(list.toString());
         if(list.get(list.size()-1)<0){
             res=1;
@@ -44,19 +42,19 @@ public class One2 {
                     break;
                 }
             }
-            
+
         }
         return res;
     }
 }
         //System.out.println(res);
-    	
-  
+
+
 //    	for(int i=1;i<A.length;i++) {
 //
 //    		int min = A[i];
 //    		int idx = i;
-//    		
+//
 //    		while(idx > 0 && A[idx-1] > min) {
 //    			int tmp = A[idx];
 //    			A[idx] = A[idx-1];
@@ -64,6 +62,6 @@ public class One2 {
 //    			idx -=1;
 //    		}
 //    	}
-    
-    
+
+
 

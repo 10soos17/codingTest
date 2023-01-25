@@ -27,17 +27,17 @@ class T1 {
 		int[] l = { 2, 4 };
 		int[] ll = { 1, 3, 5 };
 
-		String[] sl = { "14:13:25 new123 register", 
-				"14:36:41 new123 clearTutorial", 
-				"14:43:02 new123 clearBattle", 
+		String[] sl = { "14:13:25 new123 register",
+				"14:36:41 new123 clearTutorial",
+				"14:43:02 new123 clearBattle",
 				"14:43:51 new123 getReward",
-				"15:13:25 hacker123 register", 
-				"15:14:29 hacker123 getReward", 
-				"15:15:25 lucky777 register", 
-				"15:15:29 lucky777 getReward", 
+				"15:13:25 hacker123 register",
+				"15:14:29 hacker123 getReward",
+				"15:15:25 lucky777 register",
+				"15:15:29 lucky777 getReward",
 				"15:15:36 lucky777 clearTutorial",
-				"15:15:46 lucky777 clearBattle", 
-				"15:24:51 super999 getReward", 
+				"15:15:46 lucky777 clearBattle",
+				"15:24:51 super999 getReward",
 				"15:24:55 super999 getReward"};
 
 		String[] sll = { "register", "clearTutorial", "clearBattle", "getReward" };
@@ -56,8 +56,8 @@ class T1 {
 
 		Map<String, Integer> map = new HashMap<>();
 		List<String> res = new ArrayList<>();
-		for (int i = 0; i < sl.length; i++) {
-			String[] temp = sl[i].split(" ");
+		for (String element : sl) {
+			String[] temp = element.split(" ");
 
 			System.out.println(temp[1]);
 			if (!map.containsKey(temp[1])) {
@@ -82,7 +82,7 @@ class T1 {
 			}
 
 		}
-		
+
 		if(res.size() == 0) {
 			String[] answer =  {"-1"};
 			return answer;

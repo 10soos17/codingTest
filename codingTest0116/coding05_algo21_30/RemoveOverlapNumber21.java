@@ -3,9 +3,9 @@ package coding05_algo21_30;
 public class RemoveOverlapNumber21 {
 
 	public static void main(String[] args) {
-//		boolean arr[] = new boolean [101]; //false로 초기화 
+//		boolean arr[] = new boolean [101]; //false로 초기화
 //		int inArr[] = new int[101];
-//		
+//
 //		inArr[0] = 1;
 //		inArr[1] = 2;
 //		inArr[2] = 3;
@@ -20,20 +20,20 @@ public class RemoveOverlapNumber21 {
 //		inArr[11] = 15;
 //
 //		//1 2 3 4 5 7 15
-//		
+//
 //		for(int i=1;i<=100;i++) {
-//			arr[inArr[i]] = true; //한번이라도 나온경우, true로 표시 
+//			arr[inArr[i]] = true; //한번이라도 나온경우, true로 표시
 //		}
-//		
+//
 //		for(int i=1;i<=100;i++) {
 //			if(arr[i]) {
 //				System.out.print(i + " ");
 //			}
 //		}
 		int arr[]=new int[] {1, 2, 3, 1, 1, 2, 3, 4, 5, 5, 7, 15};
-		
+
 		boolean f[] = new boolean [101];
-		
+
 		for(int i=0;i<arr.length;i++) {
 			f[arr[i]] = true;
 		}
@@ -42,10 +42,10 @@ public class RemoveOverlapNumber21 {
 				System.out.print(i + " ");
 			}
 		}
-		
-		
-		
-	
-		
+
+
+
+
+
 	}
 }

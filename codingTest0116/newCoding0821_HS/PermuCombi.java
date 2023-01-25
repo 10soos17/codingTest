@@ -57,7 +57,7 @@ public class PermuCombi {
 
 			tmp[dep] = arr[i];
 			comb(dep + 1, i + 1);
-			
+
 
 		}
 
@@ -69,15 +69,15 @@ public class PermuCombi {
 			   cnt++;
 			   return;
 		   }
-		   
-		   
+
+
 		   for(int i=start;i<len;i++) {
-			   		
+
 				   tmp[dep] = arr[i];
 				   comb2(dep+1,i);
-			   
+
 		   }
-		
+
 	}
 
 	public static void main(String[] args) {
