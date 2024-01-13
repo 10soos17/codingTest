@@ -58,7 +58,7 @@ public class BJ_gold5_1717_집합의표현_unionFind {
 			}else {
 				if(find(a) == find(b)) sb.append("YES\n");
 				else sb.append("NO\n");
-			}
+			} 
 		}
 		System.out.println(sb.toString());
 	}
@@ -83,11 +83,6 @@ public class BJ_gold5_1717_집합의표현_unionFind {
 	}
 	
 }
-
-
-
-
-
 
 
 
