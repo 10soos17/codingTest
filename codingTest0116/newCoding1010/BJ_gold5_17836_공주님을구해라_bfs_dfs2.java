@@ -35,6 +35,7 @@ public class BJ_gold5_17836_공주님을구해라_bfs_dfs2 {
 		M = Integer.parseInt(st.nextToken());
 		T = Integer.parseInt(st.nextToken());
 		map = new int[N][M];
+		Arrays.fill(step, 987654321);
 		for(int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
 			for(int j = 0; j < M; j++) {
@@ -44,19 +45,10 @@ public class BJ_gold5_17836_공주님을구해라_bfs_dfs2 {
 		//dfs로 끝까지
 		bfs(0, 0, 0);
 		//검찾음 -> retun하고 bfs 위랑 비고
-		if(find) {
-			bfs2(sword[0], sword[1], 0);
-			int ans = Math.min(step[0], step[1]+step[2]);
-			if(ans > T) System.out.println("Fail");
-			else System.out.println(ans);
-		}else{
-			if(step[0] == -1 || step[0] > T) {
-				System.out.println("Fail");
-			}
-			else {
-				System.out.println(step[0]);
-			}
-		}
+		if(find) bfs2(sword[0], sword[1], 0);
+		int ans = Math.min(step[0], step[1] + step[2]);
+		if (ans > T) System.out.println("Fail");
+		else System.out.println(ans);
 	}
 	static void bfs(int y, int x, int dep) {
 		visited = new boolean[N][M];
@@ -93,7 +85,7 @@ public class BJ_gold5_17836_공주님을구해라_bfs_dfs2 {
 				}
 			}
 		}
-		step[0] = -1;
+		step[0] = 987654321;
 	}
 	static void bfs2(int y, int x, int dep) {
 		visited = new boolean[N][M];
@@ -120,6 +112,6 @@ public class BJ_gold5_17836_공주님을구해라_bfs_dfs2 {
 				}
 			}
 		}
-		step[2] = -1;
+		step[2] = 987654321;
 	}
 }
