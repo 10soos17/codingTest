@@ -2,13 +2,7 @@ package newCoding1010;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
 import java.util.StringTokenizer;
-
-import newCoding1010.BJ_gold4_1197_최소스패닝트리_mst.Node;
 
 /* 
 입력
@@ -27,8 +21,8 @@ import newCoding1010.BJ_gold4_1197_최소스패닝트리_mst.Node;
 켜진 스위치는 1, 꺼진 스위치는 0으로 표시하고, 스위치 상태 사이에 빈칸을 하나씩 둔다.
 
 ex.
-4
-0 1 0 1
+64
+0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 2
 1 2
 2 1
@@ -51,10 +45,14 @@ public class BJ_silver4_스위치켜고끄기_구현 {
 			int n = Integer.parseInt(st.nextToken());
 			calc(s, n);
 		}
+		int cnt = 1;
 		for(int i = 1; i < N + 1; i++) {
-			if(i%21 == 0)System.out.println();
+			if(i%(20*cnt+1) == 0) {
+				System.out.println();
+				cnt++;
+			}
 			System.out.print(list[i]);
-			if(i%21 != 20)System.out.print(" ");
+			if(i%(20*cnt+1) != 20*cnt && i != N)System.out.print(" ");
 		}
 	}
 	static void calc(int s, int n) {
@@ -71,12 +69,13 @@ public class BJ_silver4_스위치켜고끄기_구현 {
 			int limit = Math.min(n-1, N-n);
 			if(limit == 0) return;
 			while(true) {
-				if(limit == cnt) break;
+				if(list[n-cnt] != list[n+cnt]) break;
 				if(list[n-cnt] == list[n+cnt]) {
 					int status = Math.abs(list[n-cnt] - 1);
 					list[n-cnt] = status;
 					list[n+cnt] = status;
 				}
+				if(limit == cnt) break;
 				cnt++;
 			}
 		}
