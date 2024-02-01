@@ -33,67 +33,105 @@ public class BJ_silver1__2667_단지번호붙이기_bfs_dfs {
 
 	static int[][] dir = {{-1,0},{0,1},{1,0},{0,-1}};
 	static int N;
-	static int arr[][];
+	static int map[][];
 	static boolean visited[][];
 	static List<Integer> answer = new ArrayList<>();
 	static int sum;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
-		arr = new int[N][N];
+		map = new int[N][N];
 		visited = new boolean[N][N];
-		for(int i = 0; i < N; i++) {
+		for(int i = 0;i<N;i++) {
 			String s = br.readLine();
-			for(int j = 0; j < N; j++) {
-				arr[i][j] = Integer.parseInt(s.charAt(j)+"");
+			for(int j=0;j<N;j++) {
+				map[i][j] = Integer.parseInt(s.charAt(j)+"");
 			}
 		}
-		int cnt = 0;
-		for(int i = 0; i < N; i++) {
-			for(int j = 0; j < N; j++) {
-				if(arr[i][j] == 1 && !visited[i][j]) {
+		for(int i = 0;i<N;i++) {
+			for(int j=0;j<N;j++) {
+				if(!visited[i][j] && map[i][j] == 1) {
 					sum = 1;
-					//answer.add(bfs(i, j));
 					bfs(i, j);
+					//sum = bfs2(i, j);
+					//sum = bfs3(i, j);
 					answer.add(sum);
-					cnt++;
-				}	
+				}
 			}
 		}
-		System.out.println(cnt);
+		System.out.println(answer.size());
 		Collections.sort(answer);
-		for(int i : answer) {
-			System.out.println(i);
-		}
-		
+		for(int i : answer) System.out.println(i);
 	}
+	// o - 개수 밖에서 세기(gloabal변수)
 	static void bfs(int y, int x) {
 		visited[y][x] = true;
 		Queue<int[]> q = new ArrayDeque<>();
-		//int sum = 1;
-		
-		q.offer(new int[] {y, x});
-		
+		q.offer(new int[]{y, x});
 		while(!q.isEmpty()) {
-			int[] c = q.poll();
-			int ci = c[0];
-			int cj = c[1];
-			
-			for(int i = 0; i < 4; i++) {
-				int ni = ci + dir[i][0];
-				int nj = cj + dir[i][1];
-				
-				if(ni < 0 || nj < 0 || ni > N-1 || nj > N-1) continue;
-				if(!visited[ni][nj] && arr[ni][nj] == 1){
-					visited[ni][nj] = true;
+			int[] now = q.poll();
+			int ny = now[0];
+			int nx = now[1];
+
+			for(int d = 0; d < 4; d++) {
+				int dy = dir[d][0] + ny;
+				int dx = dir[d][1] + nx;
+				if(dy > N -1 || dx > N-1||dy<0||dx<0)continue;
+				if(!visited[dy][dx] && map[dy][dx] == 1) {
+					visited[dy][dx] = true;
 					sum++;
-					q.offer(new int[] {ni, nj});
+					q.offer(new int[] {dy, dx});
 				}
 			}
-			
 		}
-		//return sum;
-		
-	}
+	}	
+	// o - 개수 밖에서 세기(지역변수)
+	static int bfs2(int y, int x) {
+		visited[y][x] = true;
+		int cnt=1;
+		Queue<int[]> q = new ArrayDeque<>();
+		q.offer(new int[]{y, x});
+		while(!q.isEmpty()) {
+			int[] now = q.poll();
+			int ny = now[0];
+			int nx = now[1];
 
+			for(int d = 0; d < 4; d++) {
+				int dy = dir[d][0] + ny;
+				int dx = dir[d][1] + nx;
+				if(dy > N -1 || dx > N-1||dy<0||dx<0)continue;
+				if(!visited[dy][dx] && map[dy][dx] == 1) {
+					visited[dy][dx] = true;
+					cnt++;
+					q.offer(new int[] {dy, dx});
+				}
+			}
+		}
+		return cnt;
+	}
+	// x - q에 개수 넘겨서 세면 안됨 
+	static int bfs3(int y, int x) {
+		visited[y][x] = true;
+		int cnt=1;
+		Queue<int[]> q = new ArrayDeque<>();
+		q.offer(new int[]{y, x, cnt});
+		while(!q.isEmpty()) {
+			int[] now = q.poll();
+			int ny = now[0];
+			int nx = now[1];
+			int dCnt = now[2];
+			//System.out.println("");
+			for(int d = 0; d < 4; d++) {
+				int dy = dir[d][0] + ny;
+				int dx = dir[d][1] + nx;
+				if(dy > N -1 || dx > N-1||dy<0||dx<0)continue;
+				if(!visited[dy][dx] && map[dy][dx] == 1) {
+					visited[dy][dx] = true;
+					cnt= dCnt+1;
+					q.offer(new int[] {dy, dx, dCnt+1});
+				}
+			}
+		}
+		return cnt;
+	}	
 }
