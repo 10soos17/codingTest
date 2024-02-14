@@ -46,9 +46,7 @@ public class BJ_gold4_2056_작업_위상정렬 {
 		int N = Integer.parseInt(br.readLine());
 		dist = new int[N + 1];
 		distW = new int[N + 1];
-		int num = 0;
-		for (int i = 0; i < N + 1; i++)
-			list.add(new ArrayList<>());
+		for (int i = 0; i < N + 1; i++) list.add(new ArrayList<>());
 		for (int i = 1; i < N + 1; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			int w = Integer.parseInt(st.nextToken());
@@ -62,8 +60,7 @@ public class BJ_gold4_2056_작업_위상정렬 {
 		}
 		Queue<Node> q = new ArrayDeque<>();
 		for (int i = 1; i < N + 1; i++) {
-			if (dist[i] == 0)
-				q.offer(new Node(i, dist[i]));
+			if (dist[i] == 0) q.offer(new Node(i, dist[i]));
 		}
 		while (!q.isEmpty()) {
 			Node now = q.poll();
@@ -72,9 +69,7 @@ public class BJ_gold4_2056_작업_위상정렬 {
 					distW[next.to] = distW[now.to] + next.weight;
 				}
 				dist[next.to]--;
-				if (dist[next.to] == 0) {
-					q.offer(new Node(next.to, distW[next.to]));
-				}
+				if (dist[next.to] == 0) q.offer(new Node(next.to, distW[next.to]));
 			}
 		}
 		int ans = Arrays.stream(distW).max().orElse(-1);
