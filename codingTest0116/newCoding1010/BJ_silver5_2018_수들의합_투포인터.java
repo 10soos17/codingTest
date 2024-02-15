@@ -14,16 +14,16 @@ public class BJ_silver5_2018_수들의합_투포인터 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		int S=1;
+		int S=0;
 		int E=1;
 		int cnt=0;
-		int sum=S;
+		int sum=E;
 		
 		while(E<=N) {
 			if(sum==N) {
 				cnt++;
-				sum-=S;
 				S+=1;
+				sum-=S;
 				continue;
 			}
 			else if(sum <N) {
@@ -32,8 +32,8 @@ public class BJ_silver5_2018_수들의합_투포인터 {
 				continue;
 			}
 			else if(sum >N) {
-				sum-=S;
 				S+=1;
+				sum-=S;
 				continue;
 			}
 		}
