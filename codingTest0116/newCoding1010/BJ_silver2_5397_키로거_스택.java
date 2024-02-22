@@ -20,7 +20,14 @@ import java.util.Stack;
 
 출력
 각 테스트 케이스에 대해서, 강산이의 비밀번호를 출력한다. 비밀번호의 길이는 항상 0보다 크다.
- 
+
+2
+AB<CD
+ABC<<DE
+
+ACDB
+ADEBC
+-----------
 2
 <<BP<A>>Cd-
 ThIsIsS3Cr3t
@@ -33,36 +40,32 @@ public class BJ_silver2_5397_키로거_스택 {
 	public static void main(String[] args) throws Exception {
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Stack<Character> stack = new Stack<>(); 
+		Stack<Character> tmp = new Stack<>();
 		int N = Integer.parseInt(br.readLine());
-		List<Character> stack = new Stack<>(); 
-		List<Character> tmp = new Stack<>();
 		for(int i =0 ; i < N;i++) {
-			String s = br.readLine();
 			stack = new Stack<>(); 
 			tmp = new Stack<>();
+			String s = br.readLine();
 			int len = s.length();
 			for(int j=0;j<len;j++) {
 				char now = s.charAt(j);
 				int sLen = stack.size();
 				int tLen = tmp.size();
 				if(now == '<') {
-					if(sLen!= 0) tmp.add(stack.remove(sLen-1));
+					if(sLen != 0) tmp.push(stack.pop());
 				}
 				else if(now == '>') {
-					if(tLen != 0) stack.add(tmp.remove(tLen-1));
+					if(tLen != 0) stack.push(tmp.pop());
 				}
 				else if(now == '-') {
-					if(sLen!= 0) stack.remove(sLen-1);
+					if(sLen !=0) stack.pop();
 				}
-				else {
-					stack.add(now);
-				}
+				else stack.push(now);
 			}
-			for(Character ss : stack) {
-				sb.append(ss);
-			}
-			for(Character ss : tmp) {
-				sb.append(ss);
+			for(Character ss : stack)sb.append(ss);
+			while(!tmp.isEmpty()) {
+				sb.append(tmp.pop());
 			}
 			sb.append("\n");
 		}
