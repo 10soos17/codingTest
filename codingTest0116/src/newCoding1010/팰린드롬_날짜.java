@@ -61,7 +61,7 @@ public class 팰린드롬_날짜 {
 		System.out.println(cnt);
 		*/
 		// 태어날 날짜 펠린드롬
-		String birthday = "1994-04-23T00:00:00.000";//"1985-10-17T00:00:00.000";//"1994-04-23T00:00:00.000";//
+		String birthday = "2021-11-12T00:00:00.000";//"1985-10-17T00:00:00.000";//"1994-04-23T00:00:00.000";//
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 		Date bFormat = df.parse(birthday);
 		//System.out.println(bFormat);
