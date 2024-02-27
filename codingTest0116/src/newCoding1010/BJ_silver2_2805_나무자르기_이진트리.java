@@ -28,32 +28,67 @@ ex.
 
 */
 public class BJ_silver2_2805_나무자르기_이진트리 {
+	static int N;
+	static long M;
+	static long[] arr;
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		int N = Integer.parseInt(st.nextToken());
-		long M = Long.parseLong(st.nextToken());
-		long[] arr = new long[N];
+		N = Integer.parseInt(st.nextToken());
+		M = Long.parseLong(st.nextToken());
+		arr = new long[N];
 		st = new StringTokenizer(br.readLine(), " ");
-		for(int i = 0; i<N;i++) arr[i] = Long.parseLong(st.nextToken());
-		Arrays.sort(arr);
-		long now = arr[N-1];
-		long sum = 0;
-		int idx = N-1;
-		int beforeIdx = N;
-		while(sum < M) {
-			now-=1;
-			for(int i=idx; i>= 0;i--) {
-				long len = arr[i] - now;
-				if(len < 0) {
-					idx = i;
-					break;
-				}
-				sum += len;
-			}
-			sum = sum  + (N-beforeIdx);
-			beforeIdx = idx+1;
+		long l = 0;
+		long r = 0;
+		for(int i = 0; i<N;i++) {
+			long num = Long.parseLong(st.nextToken());
+			arr[i] = num;
+			r = Math.max(r, num);
 		}
-		System.out.println(now);
+		r++;
+		while(l<r) {
+			long mid = (l+r)/2;
+			if(calc(mid) < M) r = mid;
+			else {l = mid + 1;}
+		}
+		System.out.println(l-1);
+	}
+	static long calc(long mid) {
+		long tmp = 0;
+		for(int i=0; i < N; i++) {
+			long num = arr[i] - mid;
+			if(num > 0) {
+				tmp = tmp + (arr[i] - mid);
+			}
+		}
+		return tmp;
 	}
 }
+
+/*
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+N = Integer.parseInt(st.nextToken());
+M = Long.parseLong(st.nextToken());
+arr = new long[N];
+st = new StringTokenizer(br.readLine(), " ");
+for(int i = 0; i<N;i++) {arr[i] = Long.parseLong(st.nextToken());}
+Arrays.sort(arr);
+long now = arr[N-1];
+long sum = 0;
+int idx = N-1;
+int beforeIdx = N;
+while(sum < M) {
+	now-=1;
+	for(int i=idx; i>= 0;i--) {
+		long len = arr[i] - now;
+		if(len < 0) {
+			idx = i;
+			break;
+		}
+		sum += len;
+	}
+	sum = sum  + (N-beforeIdx);
+	beforeIdx = idx+1;
+}
+System.out.println(now);*/
