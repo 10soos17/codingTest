@@ -45,39 +45,25 @@ public class BJ_gold4_2110_공유기설치_이진트리 {
 		for(int i = 0; i<N;i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
-		Arrays.sort(arr);
-		/*
-		int len = 987654321;
-		int now = arr[0];
-		int n = (N+1)/M;
-		int idx = n;
-		while(idx<N) {
-			int next = arr[idx];
-			len = Math.min(len, next-now);
-			now = next;
-			idx+=n;
-		}
-		System.out.println(len);
-		*/
-		
-		int l = 0;
-		int r = M - 1;
-		int cnt = 2;
-		int max = arr[r] - arr[l];
-		while(cnt < M) {
-			int mid = (l+r)/2;
-			if(arr[mid] - arr[l] < arr[r] - arr[mid]) r = mid
+		Arrays.sort(arr);		
+		int l = 1;
+		int r = arr[M-1] - arr[0] + 1;
+		int mid = (l + r) / 2;
+		while(l < r) {
+			mid = (l+r)/2;
 			if(calc(mid) < M) r = mid;
-			else {l = mid + 1;}
+			else l = mid + 1;
 		}
 		System.out.println(l-1);
 	}
-	static long calc(int mid) {
-		long tmp = 0;
-		for(int i=0; i < N; i++) {
-			long num = arr[i] - mid;
-			if(num > 0) {
-				tmp = tmp + (arr[i] - mid);
+	static int calc(int mid) {
+		int tmp = 1;
+		int before = arr[0];
+		for(int i=1; i < N; i++) {
+			int now = arr[i];
+			if(now - before >= mid) {
+				tmp++;
+				before = now;
 			}
 		}
 		return tmp;
