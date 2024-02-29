@@ -31,6 +31,8 @@ ex.
 9
 
 3
+
+// https://blog.naver.com/hansaem900d/223202965087 참고
 */
 public class BJ_gold4_2110_공유기설치_이진트리 {
 	static int N;
