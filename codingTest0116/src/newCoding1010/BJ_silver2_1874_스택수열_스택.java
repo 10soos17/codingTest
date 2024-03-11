@@ -1,11 +1,8 @@
 package newCoding1010;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 // https://www.acmicpc.net/problem/1874
 /*
@@ -70,49 +67,23 @@ public class BJ_silver2_1874_스택수열_스택 {
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
-		Queue<Integer> q = new ArrayDeque<>();
-		Stack<Integer> stack = new Stack<>(); 
-		boolean flag = false;
-		int before = 987654321;
-		for(int i=0;i<N;i++) {
-			int now = Integer.parseInt(br.readLine());
-			/*if(flag) {
-				if(before < now) {
-					System.out.println("NO");
-					return;
-				}
-				
-			}
-			if(now == N) {
-				flag = true;
-			}
-			before = now;*/
-			q.offer(now);
-		}
-		int idx=1;
-		while(true) {
-			int n = q.poll();
-			if(idx <= n) {
-				while(idx <= n) {
-					stack.push(idx);
-					sb.append("+\n");
+		Stack<Integer> stack = new Stack<>();
+		int idx = 0;
+		for (int i = 0; i < N; i++) {
+			int n = Integer.parseInt(br.readLine());
+			if (idx <= n) {
+				while (idx <= n) {
+					if (idx != 0) {
+						stack.push(idx);
+						sb.append("+\n");
+					}
 					idx++;
 				}
-			}else {
-				int s = stack.pop();
-				while(s >= n) {
-					if(s != n) {
-						System.out.println("NO");
-						return;
-					}
-					sb.append("-\n");
-					s = stack.pop();
-				}
-				
 			}
-			if(n == N) break;
-		}
-		while(!stack.isEmpty()) {
+			if (stack.peek() != n) {
+				System.out.println("NO");
+				return;
+			}
 			stack.pop();
 			sb.append("-\n");
 		}
