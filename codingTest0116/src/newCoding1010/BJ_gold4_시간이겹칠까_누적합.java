@@ -36,7 +36,7 @@ https://www.acmicpc.net/problem/28018
 2
 0
 */
-public class BJ_gold5_시간이겹칠까_누적합 {
+public class BJ_gold4_시간이겹칠까_누적합 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
