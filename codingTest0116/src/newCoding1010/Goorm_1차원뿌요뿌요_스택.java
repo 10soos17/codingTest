@@ -17,7 +17,6 @@ ABCCCBBAAA
 CLEAR!
 */
 public class Goorm_1차원뿌요뿌요_스택 {
-
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
@@ -26,29 +25,28 @@ public class Goorm_1차원뿌요뿌요_스택 {
 		int M = Integer.parseInt(st.nextToken());
 		String S = br.readLine();
 		Stack<Character> stack = new Stack<>();
-		for(int i = 0; i < N; i++) {
-			char now = S.charAt(i);
-			
-			if(stack.size() >= M && stack.get(stack.size()-1) != now) {
-				boolean flag = true;
-				int idx = 0;
-				for(int j = stack.size()-1; j > 1; j--) {
-					System.out.println("check:"+j);
-					idx++;
-					if(stack.get(j) != stack.get(j-1)) {						
-						System.out.println("checkxxxx:"+j+"idx"+idx);
-						flag = false;
-						if(idx >= M) flag = true;
-						break;
+		for(int i = 0; i < N + 1; i++) {
+			char now;
+			if(i != N) now = S.charAt(i);
+			else now = '!';
+			if(stack.size() >= M) {
+				char before = stack.peek();
+				if(now != before) {
+					boolean flag = true;
+					int idx = 0;
+					for(int j = stack.size() - 1; j >= 0; j--) {
+						if(stack.get(j) != before) {					
+							flag = false;
+							if(idx >= M) flag = true;
+							break;
+						}
+						idx++;
 					}
-					
+					if(flag) for(int j = 0; j < idx; j++) stack.pop();
 				}
-				System.out.println("checkend====================");
-				if(flag) for(int j=0; j < idx; j++) stack.pop();
 			}
-			stack.push(now);
+			if(i != N) stack.push(now);
 		}
-		
 		if(stack.size() == 0) System.out.println("CLEAR!"); 
 		else for(char s : stack) sb.append(s);
 		System.out.print(sb.toString());
