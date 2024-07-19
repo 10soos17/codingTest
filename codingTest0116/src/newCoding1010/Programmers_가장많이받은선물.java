@@ -23,8 +23,8 @@ public class Programmers_가장많이받은선물 {
 	static Map<String, Map<String, Integer>> give = new HashMap<>();
 	static Map<String, Integer> profit = new HashMap<>();
 	public static void main(String[] args) throws Exception {
-		String[] friends = {"joy", "brad", "alessandro", "conan", "david"};
-		String[] gifts = {"alessandro brad", "alessandro joy", "alessandro conan", "david alessandro", "alessandro david"};
+		String[] friends = {"muzi", "ryan", "frodo", "neo"};
+		String[] gifts = {"muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"};
 
 		int result = solution(friends, gifts);
 		System.out.println(result);
@@ -42,8 +42,8 @@ public class Programmers_가장많이받은선물 {
 				map.put(friends[j], 0);
 			}
 			give.put(friends[i], map);
+			profit.put(friends[i], 0);
 		}
-
 		for (int i = 0; i < gifts.length; i++) {
 			String giver = gifts[i].split(" ")[0];
 			String taker = gifts[i].split(" ")[1];
@@ -52,7 +52,8 @@ public class Programmers_가장많이받은선물 {
 			Integer count = map.get(taker) + 1;
 			map.put(taker, count);
 			give.put(giver, map);
-			profit.put(giver, profit.getOrDefault(giver, 0) + 1);
+			profit.put(giver, profit.get(giver) + 1);
+			profit.put(taker, profit.get(taker) - 1);
 		}
 		//  둘사이 주고받은 게 있으면, 많이 준 사람이 +1 / 기록 없거나 같으면 선물지수 큰 사람 +1 / 선물지수도 같으면 +0
 		for (int i = 0; i < friends.length; i++) {
@@ -70,23 +71,16 @@ public class Programmers_가장많이받은선물 {
 				Map<String, Integer> sMap = give.get(s);
 				Integer tCnt = sMap.get(name);
 				
-				if((gCnt != 0 || tCnt != 0) && gCnt > tCnt) n+=1;
-				else{
-					Integer pgCnt = profit.get(name);
-					Integer ptCnt = profit.get(s);
-					if(pgCnt == null && ptCnt == null) continue;
-					else if(pgCnt == null && ptCnt != null) {
-						if(ptCnt < 0 ) n+=1;
-					}
-					else if(pgCnt != null && ptCnt == null) {
-						if(pgCnt > 0 ) n+=1;
-					}
-					else if(pgCnt> ptCnt) n+=1;
-				}
+				Integer pgCnt = profit.get(name);
+				Integer ptCnt = profit.get(s);
+				
+				if(gCnt != 0 || tCnt != 0) {
+					if(gCnt > tCnt) n+=1;
+					else if(gCnt == tCnt && pgCnt > ptCnt) n+=1;
+				} else if(pgCnt > ptCnt) n+=1;
 			}
 			answer = Math.max(n, answer);
 		}
 		return answer;
 	}
-
 }
