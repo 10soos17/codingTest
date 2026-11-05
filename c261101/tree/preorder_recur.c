@@ -1,4 +1,4 @@
-16	#include <stdio.h>
+#include <stdio.h>
 
 struct Node {
     int value;
@@ -11,7 +11,7 @@ void PRE(struct Node *N) {
     if (!N) return;
 
     if (++CNT == 3) {
-        printf("%d", N->value);
+        printf("%d\n", N->value);
         return;
     }
     PRE(N->L);
@@ -19,7 +19,7 @@ void PRE(struct Node *N) {
 }
 
 void PRE_PRINT(struct Node *N) {
-    printf("SS__node:%d, cnt:%d\n", N, CNT);
+    printf("SS__node:%d, cnt:%d\n", N->value, CNT);
     //printf("pointer: %p\n", (void*)&N);
      //printf("pointer: %p\n", (void*)&N->value);
      // printf("pointer: %p\n", (void*)&N->L);
@@ -30,7 +30,7 @@ void PRE_PRINT(struct Node *N) {
         //return;
         //}
     printf("CC__node:%d, cnt:%d\n", N->value, CNT);
-    ++CNT;
+    //++CNT;
     printf("LL__node:%d, cnt:%d\n", N->value, CNT);
     PRE(N->L);
     printf("RR__node:%d, cnt:%d\n", N->value, CNT);
@@ -45,7 +45,7 @@ int main() {
     struct Node N2 = {2, &N4, &N5};
     struct Node N1 = {1, &N2, &N3};
 
-    PRE(&N1);
-    //PRE_PRINT(&N1);
+    //PRE(&N1);
+    PRE_PRINT(&N1);
     return 0;
 }
