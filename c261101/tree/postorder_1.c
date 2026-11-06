@@ -1,8 +1,6 @@
 #include <stdio.h>
 #define MAX 100
 
-int WAY = 0;
-int ROOT[MAX];
 struct Node *STACK[MAX];
 int TOP = -1;
 
@@ -31,23 +29,33 @@ struct Node *peek() {
 }
 //printf("8바이트 이동 후 주소: %p\n", (void *)offsetNode);
 //void *ptr = (void *)0x00000021229FFB80ULL;
-void TEST(struct Node *N) {
-    struct Node *NL = N;
+void POST(struct Node *N) {
+    struct Node *P = N;
     push(N);
-
     while(N) {
-        printf("node:%d\n", N->value);
         N = peek();
         N = N->L;
         if(N == 0) {
             N = pop();
-            if(N->value == 11) break;
-            N = pop();
-            N = N->R;
+            printf("node:%d\n", N->value);
+            P = pop();
+            int check =  N->value == P->R->value;
+            while(check){
+                printf("root_Node:%d\n", P->value);
+                N = P;
+                P = pop();
+                if(!P) {
+                    printf("exit_Node:%d\n", N->value);
+                    return;
+                };
+                check =  N->value == P->R->value;
+            }
+            push(P);
+            N = P->R;
         }
         push(N);
     };
-     printf("exitnode:%d\n", N->value);
+     //printf("exitnode:%d\n", N->value);
 }
 int main(void) {
     struct Node N23 = {23, 0, 0};
@@ -68,55 +76,11 @@ int main(void) {
     struct Node N8 = {8, 0, 0};
     struct Node N7 = {7, &N10, &N11};
     struct Node N6 = {6, 0, 0};
-    struct Node N4 = {4, &N8, &N9};
     struct Node N5 = {5, 0, 0};
+    struct Node N4 = {4, &N8, &N9};
     struct Node N3 = {3, &N6, &N7};
     struct Node N2 = {2, &N4, &N5};
     struct Node N1 = {1, &N2, &N3};
     
-    TEST(&N1);
-    //PRE(&N1);
-}
-
-/*
-void PRE(struct Node *N)
-{
-    printf("SS__node:%d, cnt:%d\n", N, CNT);
-    //printf("pointer: %p\n", (void*)&N);
-     //printf("pointer: %p\n", (void*)&N->value);
-     // printf("pointer: %p\n", (void*)&N->L);
-     // printf("pointer: %p\n", (void*)&N->R);
-    if (!N) return;
-    //if (++CNT == 3) {
-        //printf("%d", N->value);
-        //return;
-        //}
-    printf("CC__node:%d, cnt:%d\n", N->value, CNT);
-    ++CNT;
-    printf("LL__node:%d, cnt:%d\n", N->value, CNT);
-    PRE(N->L);
-    printf("RR__node:%d, cnt:%d\n", N->value, CNT);
-    PRE(N->R);
-    printf("EE__node:%d, cnt:%d\n", N->value, CNT);
-}
-void TEST2(struct Node *N)
-{
-    struct Node *NR = N;
-    while(N) {
-        printf("LL__node:%d, cnt:%d\n", N->value, CNT);
-        NR = N->R;
-        while(NR){
-            CNT++;
-            printf("RR__node:%d, cnt:%d\n", NR->value, CNT);
-            NR = NR->R;
-        }
-        CNT++;
-        printf("CC__node:%d, cnt:%d\n", N->value, CNT);
-        N = N->L;
-    }
-    //printf("LL__node:%d, cnt:%d\n", N->value, CNT);
-    //printf("RR__node:%d, cnt:%d\n", NR->value, CNT);
-}
-
-
-*/
+    POST(&N1);
+};
